@@ -8,6 +8,9 @@ export default function FindServiceScreen() {
   function onNextHandler() {
     navigation.navigate("WelcomeToQuotoScreen");
   }
+  function skipHandler() {
+    navigation.navigate("OnboardingHomeScreen");
+  }
   return (
     <View className="flex-1 bg-[#F9FAFB]">
       <InitialScreen activeIndex={2} />
@@ -37,6 +40,7 @@ export default function FindServiceScreen() {
         backgroundColor="#fff"
         color="#175994"
         marginTop={16}
+        onPress={skipHandler}
       />
     </View>
   );

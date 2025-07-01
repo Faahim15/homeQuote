@@ -3,10 +3,14 @@ import InitialScreen from "../../components/initial/InitialScreen";
 import CustomHeader from "../../components/initial/CustomHeader";
 import CustomButton from "../../components/initial/CustomButton";
 import { useNavigation } from "@react-navigation/native";
+import { skipHandler } from "../../constants/ReusableFunction";
 export default function WelcomeScreen() {
   const navigation = useNavigation();
   function onNextHandler() {
     navigation.navigate("QuoteCompareScreen");
+  }
+  function skipHandler() {
+    navigation.navigate("OnboardingHomeScreen");
   }
 
   return (
@@ -39,6 +43,7 @@ export default function WelcomeScreen() {
         backgroundColor="#fff"
         color="#175994"
         marginTop={16}
+        onPress={skipHandler}
       />
     </View>
   );

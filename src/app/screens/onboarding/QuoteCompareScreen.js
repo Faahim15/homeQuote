@@ -9,7 +9,9 @@ export default function QuoteCompareScreen() {
   function onNextHandler() {
     navigation.navigate("FindServiceScreen");
   }
-
+  function skipHandler() {
+    navigation.navigate("OnboardingHomeScreen");
+  }
   return (
     <View className="flex-1 bg-[#F9FAFB]">
       <InitialScreen activeIndex={1} />
@@ -39,6 +41,7 @@ export default function QuoteCompareScreen() {
         backgroundColor="#fff"
         color="#175994"
         marginTop={16}
+        onPress={skipHandler}
       />
     </View>
   );
