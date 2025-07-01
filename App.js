@@ -5,9 +5,11 @@ import {
   Poppins_700Bold,
   useFonts,
 } from "@expo-google-fonts/poppins";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import "./global.css";
+import "./global.css"; 
+import { NavigationContainer } from "@react-navigation/native"; 
+import { SafeAreaView } from "react-native-safe-area-context";
+import AppStackNavigation from "./src/app/navigation/AppStackNavigation";
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -15,22 +17,16 @@ export default function App() {
     Poppins_500Medium,
     Poppins_700Bold,
   });
+
   if (!fontsLoaded) {
     return null;
   }
+
   return (
-    <View style={styles.container}>
-      <Text className="text-xl">Hello world!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView  className='flex-1' >
+      <NavigationContainer>
+        <AppStackNavigation />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

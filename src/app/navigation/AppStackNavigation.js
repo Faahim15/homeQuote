@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
-
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import WelcomeScreen from "../screens/onboarding/WelcomeScreen";
 export default function AppStackNavigation() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View>
-      <Text className="bg-[#000]">AppStackNavigation</Text>
-    </View>
+    <Stack.Navigator screenOptions={{ headerShown: false }} >
+      <Stack.Screen name="welcomeScreen" component={WelcomeScreen} />
+    </Stack.Navigator>
   );
 }
