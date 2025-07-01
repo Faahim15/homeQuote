@@ -1,3 +1,4 @@
+import { View, Text } from "react-native";
 import {
   Poppins_400Regular,
   Poppins_500Medium,
@@ -5,8 +6,8 @@ import {
   Poppins_700Bold,
   useFonts,
 } from "@expo-google-fonts/poppins";
-import "./global.css"; 
-import { NavigationContainer } from "@react-navigation/native"; 
+import "./global.css";
+import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AppStackNavigation from "./src/app/navigation/AppStackNavigation";
 
@@ -22,8 +23,17 @@ export default function App() {
     return null;
   }
 
+  // // Temporary simple screen to test Tailwind
+  // return (
+  //   <View className="flex-1 items-center justify-center bg-white">
+  //     <Text className="text-2xl font-bold text-red-200">Hello World</Text>
+  //   </View>
+  // );
+
+  // When ready, uncomment this for navigation
+
   return (
-    <SafeAreaView  className='flex-1' >
+    <SafeAreaView className="flex-1 bg-[#F9FAFB] ">
       <NavigationContainer>
         <AppStackNavigation />
       </NavigationContainer>

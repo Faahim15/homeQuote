@@ -1,18 +1,16 @@
 import { View, Image } from "react-native";
 import InitialScreen from "../../components/initial/InitialScreen";
 import CustomHeader from "../../components/initial/CustomHeader";
-import CustomButton from "../../components/initial/CustomButton";
 import { useNavigation } from "@react-navigation/native";
-export default function WelcomeScreen() {
+import CustomButton from "../../components/initial/CustomButton";
+export default function FindServiceScreen() {
   const navigation = useNavigation();
   function onNextHandler() {
-    navigation.navigate("QuoteCompareScreen");
+    navigation.navigate("WelcomeToQuotoScreen");
   }
-
   return (
     <View className="flex-1 bg-[#F9FAFB]">
-      <InitialScreen activeIndex={0} />
-
+      <InitialScreen activeIndex={2} />
       <View className=" relative justify-center items-center ">
         {/* Background Image */}
         <Image
@@ -23,15 +21,15 @@ export default function WelcomeScreen() {
 
         {/* Onboarding Image on top */}
         <Image
-          source={require("../../../../assets/images/onboarding/onboarding1.png")}
-          className="absolute w-[70%] h-[93%] top-[-1%] " // Adjust positioning as needed
+          source={require("../../../../assets/images/onboarding/onboarding3.png")}
+          className="absolute w-[60%] h-[80%] top-[3%] " // Adjust positioning as needed
           resizeMode="contain"
         />
       </View>
 
       <CustomHeader
-        title="Welcome to QUOTO"
-        subtitle="Take a photo, describe the issue, and let local pros come to you. No hassle, no endless forms — just fast, easy service requests."
+        title="Find Services"
+        subtitle="From plumbing and electrical to repairs and renovations - everything you need, in one place."
       />
       <CustomButton onPress={onNextHandler} title="Next" />
       <CustomButton

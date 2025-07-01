@@ -1,18 +1,18 @@
 import { View, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import InitialScreen from "../../components/initial/InitialScreen";
 import CustomHeader from "../../components/initial/CustomHeader";
 import CustomButton from "../../components/initial/CustomButton";
-import { useNavigation } from "@react-navigation/native";
-export default function WelcomeScreen() {
+
+export default function QuoteCompareScreen() {
   const navigation = useNavigation();
   function onNextHandler() {
-    navigation.navigate("QuoteCompareScreen");
+    navigation.navigate("FindServiceScreen");
   }
 
   return (
     <View className="flex-1 bg-[#F9FAFB]">
-      <InitialScreen activeIndex={0} />
-
+      <InitialScreen activeIndex={1} />
       <View className=" relative justify-center items-center ">
         {/* Background Image */}
         <Image
@@ -23,15 +23,15 @@ export default function WelcomeScreen() {
 
         {/* Onboarding Image on top */}
         <Image
-          source={require("../../../../assets/images/onboarding/onboarding1.png")}
-          className="absolute w-[70%] h-[93%] top-[-1%] " // Adjust positioning as needed
+          source={require("../../../../assets/images/onboarding/onboarding2.png")}
+          className="absolute w-[70%] h-[93%] top-[-4%] " // Adjust positioning as needed
           resizeMode="contain"
         />
       </View>
 
       <CustomHeader
-        title="Welcome to QUOTO"
-        subtitle="Take a photo, describe the issue, and let local pros come to you. No hassle, no endless forms — just fast, easy service requests."
+        title="Compare Quotes"
+        subtitle="Receive multiple quotes, check provider profiles, and choose based on reviews, pricing, and availability."
       />
       <CustomButton onPress={onNextHandler} title="Next" />
       <CustomButton
