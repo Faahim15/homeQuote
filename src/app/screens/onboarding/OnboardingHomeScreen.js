@@ -1,10 +1,10 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, ScrollView } from "react-native";
 import { Platform, StyleSheet } from "react-native";
 import { scale, verticalScale } from "../../components/adaptive/Adaptiveness";
 import JobsPost from "../../components/initial/JobsPost";
 export default function OnboardingHomeScreen() {
   return (
-    <View className="flex-1 bg-[#F9FAFB]">
+    <ScrollView className="flex-1 bg-[#F9FAFB]">
       {/* Header section */}
       <View className="justify-center mx-[6%] mt-[1%] ">
         <View className="flex-row justify-between ">
@@ -22,14 +22,21 @@ export default function OnboardingHomeScreen() {
           <Image
             source={require("../../../../assets/images/home/bytesize_location.png")}
             resizeMode="cover"
+            className="mt-[0.5%]"
           />
           <Text className="font-poppins-400regular text-xs text-[#8891AA] ">
             38 Chestnut StreetStaunton
           </Text>
         </View>
       </View>
-
-      <JobsPost title="Today's jobs" />
-    </View>
+      <Text className="font-poppins-semiBold text-base text-[#6B7280] mt-[6%] mx-[6%] ">
+        Today's Jobs
+      </Text>
+      <JobsPost />
+      <Text className="font-poppins-semiBold text-base text-[#6B7280] mt-[6%] mx-[6%] ">
+        Active Jobs
+      </Text>
+      <JobsPost />
+    </ScrollView>
   );
 }
