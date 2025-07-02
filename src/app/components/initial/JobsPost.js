@@ -6,13 +6,16 @@ export default function JobsPost({ title }) {
   return (
     <View
       style={styles.shadowStyle}
-      className="mx-[6%] mt-[4%] w-[85%] h-[35%] justify-center items-center rounded-2xl "
+      className="mx-[6.4%] mt-[4%] w-[87.2%] h-[37%] justify-center items-center rounded-2xl "
     >
-      <Image source={require("../../../../assets/images/home/jobImg.png")} />
+      <Image
+        style={{ width: scale(295), height: verticalScale(160) }}
+        source={require("../../../../assets/images/home/jobImg.png")}
+      />
       <View className="flex-row mt-[4%] gap-[7%]  ">
         <View>
           <Image
-            style={{ width: scale(58), height: verticalScale(58) }}
+            style={{ width: scale(48), height: verticalScale(48) }}
             source={require("../../../../assets/images/home/Avatar.png")}
           />
         </View>
@@ -51,7 +54,8 @@ export default function JobsPost({ title }) {
 const styles = StyleSheet.create({
   shadowStyle: {
     backgroundColor: "white", // Required for shadows to work
-    paddingVertical: verticalScale(60),
+    paddingVertical: verticalScale(16),
+    paddingHorizontal: scale(16),
     ...Platform.select({
       ios: {
         shadowColor: "#D4E0EB",

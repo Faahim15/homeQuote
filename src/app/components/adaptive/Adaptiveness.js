@@ -11,3 +11,6 @@ export const scale = (size) => (width / BASE_WIDTH) * size;
 
 // Scale based on height
 export const verticalScale = (size) => (height / BASE_HEIGHT) * size;
+
+export const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } =
+  Dimensions.get("window");
