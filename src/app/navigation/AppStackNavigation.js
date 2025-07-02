@@ -3,7 +3,8 @@ import WelcomeScreen from "../screens/onboarding/WelcomeScreen";
 import QuoteCompareScreen from "../screens/onboarding/QuoteCompareScreen";
 import FindServiceScreen from "../screens/onboarding/FindServiceScreen";
 import WelcomeToQuotoScreen from "../screens/onboarding/WelcomeToQuotoScreen";
-import OnboardingHomeScreen from "../components/initial/OnboardingHomeScreen";
+import OnboardingHomeScreen from "../screens/onboarding/OnboardingHomeScreen";
+
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
   return (
