@@ -1,7 +1,11 @@
 import { View, Text, Image } from "react-native";
 import CustomButton from "../../components/initial/CustomButton";
-
+import { useNavigation } from "@react-navigation/native";
 export default function WelcomeToQuotoScreen() {
+  const navigation = useNavigation();
+  function clientHandler() {
+    navigation.navigate("SignUpScreen");
+  }
   return (
     <View className="flex-1 items-center bg-[#F9FAFB]">
       <Text className="mt-[25%] font-poppins-semiBold text-xl text-[#000000] text-center">
@@ -19,7 +23,7 @@ export default function WelcomeToQuotoScreen() {
           Join As
         </Text>
       </View>
-      <CustomButton marginTop={24} title="Client" />
+      <CustomButton onPress={clientHandler} marginTop={24} title="Client" />
       <CustomButton
         title="Provider"
         backgroundColor="#fff"

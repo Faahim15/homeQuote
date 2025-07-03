@@ -4,6 +4,8 @@ import QuoteCompareScreen from "../screens/onboarding/QuoteCompareScreen";
 import FindServiceScreen from "../screens/onboarding/FindServiceScreen";
 import WelcomeToQuotoScreen from "../screens/onboarding/WelcomeToQuotoScreen";
 import OnboardingHomeScreen from "../screens/onboarding/OnboardingHomeScreen";
+import SignInScreen from "../screens/auth/SignInScreen";
+import SignUpScreen from "../screens/auth/SignUpScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -20,6 +22,11 @@ export default function AppStackNavigation() {
         name="OnboardingHomeScreen"
         component={OnboardingHomeScreen}
       />
+
+      {/* //auth Sceens */}
+
+      <Stack.Screen name="SignInScreen" component={SignInScreen} />
+      <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
     </Stack.Navigator>
   );
 }

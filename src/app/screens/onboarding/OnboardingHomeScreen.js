@@ -18,7 +18,7 @@ export default function OnboardingHomeScreen() {
   function backtoHomehandler() {}
   return (
     <View className="flex-1 bg-[#F9FAFB] ">
-      <ScrollView contentContainerStyle={{ paddingBottom: scale(10) }}>
+      <ScrollView>
         {/* Header section */}
 
         <View className="justify-center mx-[6%] mt-[1%] ">
@@ -89,10 +89,9 @@ export default function OnboardingHomeScreen() {
 
         {/* Active Jobs section ends here */}
 
-        {/* User Selection section starts here */}
-
         {/* User Selection section ends here */}
       </ScrollView>
+      {/* User Selection section starts here */}
       <View
         style={[XStyle.lightShadow, XStyle.borderStyle]}
         className=" justify-center items-center border border-[#FFFFFF] px-[6.4%] py-[9%]"
@@ -122,6 +121,7 @@ export default function OnboardingHomeScreen() {
             </Text>
           </Pressable>
         </View>
+        {/* User Selection section starts here */}
       </View>
     </View>
   );
