@@ -2,17 +2,27 @@ import { View, Text, Image } from "react-native";
 import { Platform, StyleSheet } from "react-native";
 import { scale, verticalScale } from "../adaptive/Adaptiveness";
 
-export default function JobsPost({ title }) {
+export default function JobsPost() {
   return (
     <View
       style={styles.shadowStyle}
-      className="mx-[6.4%] mt-[4%] w-[87.2%] h-[37%] justify-center items-center rounded-2xl "
+      // className="mx-[6.4%] mt-[4%] w-[87.2%]  justify-center items-center rounded-2xl "
+      className="justify-center items-center  rounded-2xl "
     >
       <Image
-        style={{ width: scale(295), height: verticalScale(160) }}
+        style={{
+          width: scale(295),
+          height: verticalScale(160),
+        }}
         source={require("../../../../assets/images/home/jobImg.png")}
       />
-      <View className="flex-row mt-[4%] gap-[7%]  ">
+      <View
+        style={{
+          gap: scale(10),
+          marginTop: verticalScale(12.42),
+        }}
+        className="flex-row"
+      >
         <View>
           <Image
             style={{ width: scale(48), height: verticalScale(48) }}
@@ -55,6 +65,9 @@ const styles = StyleSheet.create({
   shadowStyle: {
     backgroundColor: "white", // Required for shadows to work
     paddingVertical: verticalScale(16),
+    // paddingBottom: verticalScale(16),
+    width: scale(327),
+    height: verticalScale(298),
     paddingHorizontal: scale(16),
     ...Platform.select({
       ios: {

@@ -1,15 +1,24 @@
-import { View, Text, Image, ScrollView, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  Pressable,
+  FlatList,
+} from "react-native";
 
-import { scale } from "../../components/adaptive/Adaptiveness";
+import { scale, verticalScale } from "../../components/adaptive/Adaptiveness";
 import JobsPost from "../../components/initial/JobsPost";
 import UserSelectionButtons from "../../components/initial/UserSelectionButtons";
 import { XStyle } from "../../constants/ReusableFunction";
 
 export default function OnboardingHomeScreen() {
+  const jobData = Array.from({ length: 6 });
+
   function backtoHomehandler() {}
   return (
     <View className="flex-1 bg-[#F9FAFB] ">
-      <ScrollView>
+      <ScrollView contentContainerStyle={{ paddingBottom: scale(10) }}>
         {/* Header section */}
 
         <View className="justify-center mx-[6%] mt-[1%] ">
@@ -44,15 +53,40 @@ export default function OnboardingHomeScreen() {
         <Text className="font-poppins-semiBold text-base text-[#6B7280] mt-[6%] mx-[6%] ">
           Today's Jobs
         </Text>
-        <JobsPost />
+        <View className="mt-[3%] w-full h-[37%] ">
+          <FlatList
+            horizontal
+            data={jobData}
+            keyExtractor={(_, index) => index.toString()}
+            renderItem={() => <JobsPost />}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{
+              paddingLeft: scale(24),
+              paddingRight: scale(8),
+            }}
+            ItemSeparatorComponent={() => <View style={{ width: scale(16) }} />}
+          />
+        </View>
 
         {/* Today's Jobs ends here */}
 
         {/* Active Jobs section */}
-        <Text className="font-poppins-semiBold text-base text-[#6B7280] mt-[6%] mx-[6%] ">
+        <Text className=" mt-[3%] font-poppins-semiBold text-base text-[#6B7280] mx-[6%] ">
           Active Jobs
         </Text>
-        <JobsPost />
+
+        <View className="  mt-[3%] w-full h-[37%] ">
+          <FlatList
+            horizontal
+            data={jobData}
+            keyExtractor={(_, index) => index.toString()}
+            renderItem={() => <JobsPost />}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingLeft: 24, paddingRight: 8 }}
+            ItemSeparatorComponent={() => <View style={{ width: scale(1) }} />}
+          />
+        </View>
+
         {/* Active Jobs section ends here */}
 
         {/* User Selection section starts here */}
