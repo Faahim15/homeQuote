@@ -10,6 +10,7 @@ import "./global.css";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AppStackNavigation from "./src/app/navigation/AppStackNavigation";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -34,6 +35,7 @@ export default function App() {
 
   return (
     <SafeAreaView className="flex-1 bg-[#F9FAFB] ">
+      <StatusBar barStyle="dark-content" backgroundColor="white" />
       <NavigationContainer>
         <AppStackNavigation />
       </NavigationContainer>

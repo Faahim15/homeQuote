@@ -14,6 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import TextField from "../../components/auth/TextField";
 import EmailField from "../../components/auth/EmailField";
 import PasswordField from "../../components/auth/PasswordField";
+import ArrowBack from "../../components/auth/ArrowBack";
 export default function SignUpScreen() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -36,24 +37,16 @@ export default function SignUpScreen() {
 
   return (
     <SafeAreaView className="flex-1  bg-white">
-      {/* <StatusBar barStyle="dark-content" backgroundColor="white" /> */}
-
       <ScrollView
         // style={{ paddingBottom: verticalScale(500) }}
         showsVerticalScrollIndicator={false}
         className=" h-[75%] "
       >
-        {/* Header Section - 15% of screen height */}
-        <View className="justify-center px-[6%]">
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            className="w-10 h-10 justify-center"
-          >
-            <Ionicons name="arrow-back" size={24} color="#000" />
-          </TouchableOpacity>
-        </View>
+        {/* Header Section  */}
 
-        {/* Welcome Section - 20% of screen height */}
+        <ArrowBack />
+
+        {/* Welcome Section - */}
         <View className="mt-[1.5%]  justify-center items-center ">
           <Text className="font-poppins-500medium text-2xl  text-[#292929] ">
             Welcome Here!
@@ -161,8 +154,8 @@ export default function SignUpScreen() {
           <Text className="font-poppins-400regular text-sm text-black">
             Already have an account?
           </Text>
-          <TouchableOpacity>
-            <Text className="font-poppins-semiBold text-sm text-[#0054A5] ">
+          <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
+            <Text className="font-poppins-semiBold underline text-sm text-[#0054A5] ">
               Sign In
             </Text>
           </TouchableOpacity>
