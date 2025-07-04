@@ -11,10 +11,13 @@ import { scale, verticalScale } from "../../components/adaptive/Adaptiveness";
 import JobsPost from "../../components/initial/JobsPost";
 import UserSelectionButtons from "../../components/initial/UserSelectionButtons";
 import { XStyle } from "../../constants/ReusableFunction";
-
-export default function OnboardingHomeScreen() {
-  const jobData = Array.from({ length: 6 });
-
+import { useNavigation } from "@react-navigation/native";
+export default function OnboardingHomeScreen() { 
+  const jobData = Array.from({ length: 6 }); 
+  const navigation = useNavigation();
+    function clientHandler() {
+    navigation.navigate("SignUpScreen");
+  }
   function backtoHomehandler() {}
   return (
     <View className="flex-1 bg-[#F9FAFB] ">
@@ -97,9 +100,9 @@ export default function OnboardingHomeScreen() {
         className=" justify-center items-center border border-[#FFFFFF] px-[6.4%] py-[9%]"
       >
         <View className="flex-row gap-[4%]">
-          <UserSelectionButtons title="Join as Client" />
+          <UserSelectionButtons onPress={clientHandler} title="Join as Client" />
           <UserSelectionButtons
-            title="Join as Client"
+            title="Join as Provider"
             backgroundColor="#fff"
             textColor="#175994"
           />

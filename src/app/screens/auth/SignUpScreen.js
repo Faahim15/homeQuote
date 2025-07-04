@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { scale, verticalScale } from "../../components/adaptive/Adaptiveness";
-
+import { useNavigation } from "@react-navigation/native";
 export default function SignUpScreen() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -21,7 +21,8 @@ export default function SignUpScreen() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [agreeToTerms, setAgreeToTerms] = useState(false); 
+  const navigation = useNavigation();
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({
@@ -32,15 +33,16 @@ export default function SignUpScreen() {
 
   return (
     <SafeAreaView className="flex-1  bg-white">
-      <StatusBar barStyle="dark-content" backgroundColor="white" />
+      {/* <StatusBar barStyle="dark-content" backgroundColor="white" /> */}
 
       <ScrollView
         // style={{ paddingBottom: verticalScale(500) }}
-        showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={false} 
+        className=' h-[75%] '
       >
         {/* Header Section - 15% of screen height */}
         <View className="justify-center px-[6%]">
-          <TouchableOpacity className="w-10 h-10 justify-center">
+          <TouchableOpacity onPress={()=>navigation.goBack()} className="w-10 h-10 justify-center">
             <Ionicons name="arrow-back" size={24} color="#000" />
           </TouchableOpacity>
         </View>
@@ -188,7 +190,7 @@ export default function SignUpScreen() {
         </View>
       </ScrollView>
       {/* Terms and Conditions */}
-      <View className="flex-row pl-[5%] items-center">
+      <View className="flex-row pl-[5.5%]  items-center  pb-[4%] ">
         <TouchableOpacity
           onPress={() => setAgreeToTerms(!agreeToTerms)}
           className="mr-[3%]"
@@ -205,7 +207,7 @@ export default function SignUpScreen() {
         </Text>
       </View>
       {/* Bottom Section - 10% of screen height */}
-      <View className="flex-1 px-[6%]  justify-center">
+      <View className="flex-1 px-[5%] justify-center">
         {/* Sign Up Button */}
         <TouchableOpacity
           className="bg-[#0054A5] rounded-lg py-[4%] mb-[4%]"
@@ -218,7 +220,7 @@ export default function SignUpScreen() {
         </TouchableOpacity>
 
         {/* Sign In Link */}
-        <View className="flex-row gap-[0.5%] justify-center">
+        <View className="  flex-row gap-[0.5%] mb-[5%] justify-center">
           <Text className="font-poppins-400regular text-sm text-black">
             Already have an account?
           </Text>
