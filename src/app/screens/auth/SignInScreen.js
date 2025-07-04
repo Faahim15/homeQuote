@@ -5,6 +5,7 @@ import PasswordField from "../../components/auth/PasswordField";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import ShortMessage from "../../components/auth/ShortMessage";
 export default function SignInScreen() {
   const navigation = useNavigation();
   const [agreeToTerms, setAgreeToTerms] = useState(false);
@@ -56,16 +57,12 @@ export default function SignInScreen() {
           Sign In
         </Text>
       </TouchableOpacity>
-      <View className="flex-row gap-[1%] mt-[8%] justify-center">
-        <Text className="font-poppins-400regular text-sm text-black">
-          Don't you have an account?
-        </Text>
-        <TouchableOpacity onPress={() => navigation.navigate("SignUpScreen")}>
-          <Text className="font-poppins-semiBold underline text-sm text-[#0054A5] ">
-            Sign Up
-          </Text>
-        </TouchableOpacity>
-      </View>
+
+      <ShortMessage
+        title="Don't you have an account?"
+        btnText="Sign Up"
+        route="SignUpScreen"
+      />
     </View>
   );
 }
