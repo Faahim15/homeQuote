@@ -38,9 +38,13 @@ export default function SignInScreen() {
           <Text className="text-sm pt-[1%] font-poppins-400regular text-[#000000]">
             Remember me
           </Text>
-          <Text className="text-base font-poppins-bold  text-[#175994] underline ">
-            Forget me?
-          </Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ForgetPasswordScreen")}
+          >
+            <Text className="text-base font-poppins-bold  text-[#175994] underline ">
+              Forget me?
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
       <TouchableOpacity
@@ -52,7 +56,7 @@ export default function SignInScreen() {
           Sign In
         </Text>
       </TouchableOpacity>
-      <View className="flex-row gap-[1%] mt-[2%] justify-center">
+      <View className="flex-row gap-[1%] mt-[8%] justify-center">
         <Text className="font-poppins-400regular text-sm text-black">
           Don't you have an account?
         </Text>

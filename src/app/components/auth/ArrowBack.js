@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function ArrowBack() {
   const navigation = useNavigation();
   return (
-    <View className="justify-center px-[6%]">
+    <View className="justify-center pt-[3%] px-[6%]">
       <TouchableOpacity
         onPress={() => navigation.goBack()}
         className="w-10 h-10 justify-center"
