@@ -127,7 +127,7 @@ export default function SignUpScreen() {
         </View>
       </ScrollView>
       {/* Terms and Conditions */}
-      <View className="flex-row pl-[5.5%]  items-center  pb-[4%] ">
+      <View className="flex-row pl-[5.5%] pb-[6%] items-center ">
         <TouchableOpacity
           onPress={() => setAgreeToTerms(!agreeToTerms)}
           className="mr-[3%]"
@@ -144,7 +144,7 @@ export default function SignUpScreen() {
         </Text>
       </View>
       {/* Bottom Section - 10% of screen height */}
-      <View className="flex-1 px-[5%] justify-center">
+      <View className="flex-1 mb-[10%] px-[5%] justify-center">
         {/* Sign Up Button */}
         <TouchableOpacity
           className="bg-[#0054A5] rounded-lg py-[4%] mb-[4%]"
@@ -157,7 +157,7 @@ export default function SignUpScreen() {
         </TouchableOpacity>
 
         {/* Sign In Link */}
-        <View className="  flex-row gap-[0.5%] mb-[5%] justify-center">
+        <View className="  flex-row gap-[0.5%] justify-center">
           <Text className="font-poppins-400regular text-sm text-black">
             Already have an account?
           </Text>
