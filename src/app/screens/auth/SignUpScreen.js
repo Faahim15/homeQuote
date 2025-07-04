@@ -11,6 +11,9 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { scale, verticalScale } from "../../components/adaptive/Adaptiveness";
 import { useNavigation } from "@react-navigation/native";
+import TextField from "../../components/auth/TextField";
+import EmailField from "../../components/auth/EmailField";
+import PasswordField from "../../components/auth/PasswordField";
 export default function SignUpScreen() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -19,9 +22,9 @@ export default function SignUpScreen() {
     password: "",
     confirmPassword: "",
   });
-  const [showPassword, setShowPassword] = useState(false);
+
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [agreeToTerms, setAgreeToTerms] = useState(false); 
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
   const navigation = useNavigation();
 
   const handleInputChange = (field, value) => {
@@ -37,12 +40,15 @@ export default function SignUpScreen() {
 
       <ScrollView
         // style={{ paddingBottom: verticalScale(500) }}
-        showsVerticalScrollIndicator={false} 
-        className=' h-[75%] '
+        showsVerticalScrollIndicator={false}
+        className=" h-[75%] "
       >
         {/* Header Section - 15% of screen height */}
         <View className="justify-center px-[6%]">
-          <TouchableOpacity onPress={()=>navigation.goBack()} className="w-10 h-10 justify-center">
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            className="w-10 h-10 justify-center"
+          >
             <Ionicons name="arrow-back" size={24} color="#000" />
           </TouchableOpacity>
         </View>
@@ -60,96 +66,27 @@ export default function SignUpScreen() {
           </Text>
         </View>
 
-        {/* Form Section - 55% of screen height */}
+        {/* Form Section  */}
         <View className="h-[55%] px-[6%] justify-between">
-          {/* Full Name Input */}
-          <View className="mb-[4%]">
-            <Text className="font-poppins-400regular text-base text-[#000] mb-[2%]">
-              Full name
-            </Text>
-            <View className="flex-row items-center bg-[#FFF] border border-[#DCDCDC] rounded-md px-[4%] py-[3%]">
-              <Ionicons name="person-outline" size={20} color="#9E9E9E" />
-              <TextInput
-                className="flex-1 font-poppins-400regular ml-[3%] text-sm  bg-[#fff] text-black "
-                placeholder="Full name"
-                placeholderTextColor="#6B7280"
-                value={formData.fullName}
-                onChangeText={(text) => handleInputChange("fullName", text)}
-                style={{ paddingTop: verticalScale(16) }}
-              />
-            </View>
-          </View>
+          {/* Name Input */}
+          <TextField
+            label="Full Name"
+            placeholder="Full name"
+            IconName="person-outline"
+          />
+          {/* Email Input */}
+          <EmailField label="Email" />
 
-          <View className="mb-[4%]">
-            <Text className="font-poppins-400regular text-base text-[#000] mb-[2%]">
-              Email
-            </Text>
-            <View className="flex-row items-center bg-[#FFF] border border-[#DCDCDC] rounded-md px-[4%] py-[3%]">
-              <Ionicons name="mail-outline" size={20} color="#9CA3AF" />
-              <TextInput
-                className="flex-1 font-poppins-400regular ml-[3%] text-sm  bg-[#fff] text-black "
-                placeholder="Email"
-                placeholderTextColor="#6B7280"
-                value={formData.email}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                onChangeText={(text) => handleInputChange("email", text)}
-                style={{ paddingTop: verticalScale(16) }}
-              />
-            </View>
-          </View>
-
-          <View className="mb-[4%]">
-            <Text className="font-poppins-400regular text-base text-[#000] mb-[2%]">
-              Location
-            </Text>
-            <View className="flex-row items-center bg-[#FFF] border border-[#DCDCDC] rounded-md px-[4%] py-[3%]">
-              <Ionicons name="location-outline" size={20} color="#9CA3AF" />
-              <TextInput
-                className="flex-1 font-poppins-400regular ml-[3%] text-sm  bg-[#fff] text-black "
-                placeholder="House Location"
-                placeholderTextColor="#6B7280"
-                value={formData.location}
-                onChangeText={(text) => handleInputChange("location", text)}
-                style={{ paddingTop: verticalScale(16) }}
-              />
-            </View>
-          </View>
+          {/* Location Input */}
+          <TextField
+            label="Location"
+            placeholder="House Location"
+            IconName="location-outline"
+          />
 
           {/* Password Input */}
-          <View className="mb-[4%]">
-            <Text className="font-poppins-400regular text-base text-[#000] mb-[2%]">
-              Password
-            </Text>
-            <View className="flex-row items-centerbg-[#FFF] border border-[#DCDCDC] rounded-md px-[4%] py-[3%]">
-              <Ionicons
-                name="lock-closed-outline"
-                size={20}
-                color="#9CA3AF"
-                style={{ paddingTop: verticalScale(12) }}
-              />
-              <TextInput
-                className="flex-1 font-poppins-400regular ml-[3%] text-sm  bg-[#fff] text-black "
-                placeholder="Password"
-                placeholderTextColor="#9CA3AF"
-                secureTextEntry={!showPassword}
-                value={formData.password}
-                onChangeText={(text) => handleInputChange("password", text)}
-                style={{ paddingTop: verticalScale(16) }}
-              />
-              <TouchableOpacity
-                onPress={() => setShowPassword(!showPassword)}
-                className="ml-[2%]"
-              >
-                <Ionicons
-                  name={showPassword ? "eye-outline" : "eye-off-outline"}
-                  size={20}
-                  color="#9CA3AF"
-                  style={{ paddingTop: verticalScale(15) }}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
+
+          <PasswordField />
 
           {/* Confirm Password Input */}
           <View>
