@@ -51,7 +51,7 @@ export default function SignInScreen() {
       <TouchableOpacity
         className="bg-[#0054A5] mx-[6%] rounded-lg py-[4%]"
         disabled={!agreeToTerms}
-        onPress={() => navigation.navigate("HomeScreen")}
+        onPress={() => navigation.navigate("BottomTabs")}
         style={{ opacity: agreeToTerms ? 1 : 0.6 }}
       >
         <Text className="text-white text-center text-base font-poppins-semiBold ">

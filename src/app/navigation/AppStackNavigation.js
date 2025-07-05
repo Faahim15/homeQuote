@@ -10,6 +10,7 @@ import ForgetPasswordScreen from "../screens/auth/ForgetPasswordScreen";
 import VerificationScreen from "../screens/auth/VerificationScreen";
 import ResetPasswordScreen from "../screens/auth/ResetPasswordScreen";
 import HomeScreen from "../screens/client/home/HomeScreen";
+import BottomTabs from "./BottomTabs";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -44,6 +45,10 @@ export default function AppStackNavigation() {
       {/* Home Screens */}
 
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+
+      {/* BottomTabs */}
+
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
     </Stack.Navigator>
   );
 }
