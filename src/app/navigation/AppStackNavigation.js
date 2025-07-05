@@ -9,6 +9,7 @@ import SignUpScreen from "../screens/auth/SignUpScreen";
 import ForgetPasswordScreen from "../screens/auth/ForgetPasswordScreen";
 import VerificationScreen from "../screens/auth/VerificationScreen";
 import ResetPasswordScreen from "../screens/auth/ResetPasswordScreen";
+import HomeScreen from "../screens/client/home/HomeScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -39,6 +40,10 @@ export default function AppStackNavigation() {
         name="ResetPasswordScreen"
         component={ResetPasswordScreen}
       />
+
+      {/* Home Screens */}
+
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
     </Stack.Navigator>
   );
 }

@@ -35,7 +35,9 @@ export default function App() {
 
   return (
     <SafeAreaView className="flex-1 bg-[#F9FAFB] ">
-      <StatusBar barStyle="dark-content" backgroundColor="white" />
+      {/* <View>
+        <StatusBar barStyle="dark-content" backgroundColor="white" />
+      </View> */}
       <NavigationContainer>
         <AppStackNavigation />
       </NavigationContainer>

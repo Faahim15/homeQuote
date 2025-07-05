@@ -35,7 +35,7 @@ export default function SignInScreen() {
             color={agreeToTerms ? "#909090" : "#9CA3AF"}
           />
         </TouchableOpacity>
-        <View className="w-[80%] flex-row justify-between">
+        <View className="w-[85%] flex-row justify-between">
           <Text className="text-sm pt-[1%] font-poppins-400regular text-[#000000]">
             Remember me
           </Text>
@@ -43,7 +43,7 @@ export default function SignInScreen() {
             onPress={() => navigation.navigate("ForgetPasswordScreen")}
           >
             <Text className="text-base font-poppins-bold  text-[#175994] underline ">
-              Forget me?
+              Forget Password?
             </Text>
           </TouchableOpacity>
         </View>
@@ -51,6 +51,7 @@ export default function SignInScreen() {
       <TouchableOpacity
         className="bg-[#0054A5] mx-[6%] rounded-lg py-[4%]"
         disabled={!agreeToTerms}
+        onPress={() => navigation.navigate("HomeScreen")}
         style={{ opacity: agreeToTerms ? 1 : 0.6 }}
       >
         <Text className="text-white text-center text-base font-poppins-semiBold ">

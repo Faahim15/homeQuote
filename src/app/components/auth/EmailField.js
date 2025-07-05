@@ -12,12 +12,12 @@ export default function EmailField({ label }) {
         <TextInput
           className="flex-1 font-poppins-400regular ml-[3%] text-sm  bg-[#fff] text-black "
           placeholder="Email"
-          placeholderTextColor="#6B7280"
+          placeholderTextColor="#000"
           //   value={formData.email}
           keyboardType="email-address"
           autoCapitalize="none"
           //   onChangeText={(text) => handleInputChange("email", text)}
-          style={{ paddingTop: verticalScale(16) }}
+          style={{ color: "#000", paddingTop: verticalScale(16) }}
         />
       </View>
     </View>
