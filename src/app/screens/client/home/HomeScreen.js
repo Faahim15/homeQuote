@@ -14,22 +14,28 @@ import {
   scale,
   verticalScale,
 } from "../../../components/adaptive/Adaptiveness";
+import HomeTopBar from "../../../components/client/HomeTopBar";
+import PromoCard from "../../../components/client/PromoCard";
+import ServiceCards from "../../../components/client/ServiceCards";
 
 // ../../../../../assets/images/home/bytesize_location.png
 // ../../../../../assets/images/home/DP.png
 export default function HomeScreen() {
   return (
     <View className="flex-1  bg-[#F9FAFB]">
-      <View>
-        <Image
-          style={{
-            width: scale(32),
-            height: verticalScale(32),
-            borderRadius: scale(16),
-          }}
-          source={require("../../../../../assets/images/home/DP.png")}
-        />
-      </View>
+      <HomeTopBar />
+      <PromoCard />
+      <ScrollView className="flex-1 border border-green-500">
+        <View className="flex-row justify-between mt-[6%] mx-[6%]">
+          <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
+            Today's Jobs
+          </Text>
+          <Text className="font-poppins-semiBold text-base text-[#18649F] ">
+            View all
+          </Text>
+        </View>
+        <ServiceCards />
+      </ScrollView>
     </View>
   );
 }

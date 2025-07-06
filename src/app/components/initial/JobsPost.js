@@ -31,7 +31,7 @@ export default function JobsPost() {
         </View>
 
         <View className="flex-col gap-[5%]">
-          <Text className="font-poppins-semiBold text-base text-[#0D0D0D] ">
+          <Text className="font-poppins-semiBold text-base text-[#0D0D0D]">
             Wallpaper on drawing room
           </Text>
           <View className="flex-row gap-[2%]">
