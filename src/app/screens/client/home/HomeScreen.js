@@ -17,6 +17,7 @@ import {
 import HomeTopBar from "../../../components/client/HomeTopBar";
 import PromoCard from "../../../components/client/PromoCard";
 import ServiceCards from "../../../components/client/ServiceCards";
+import PopularServices from "../../../components/client/PopularServices";
 
 // ../../../../../assets/images/home/bytesize_location.png
 // ../../../../../assets/images/home/DP.png
@@ -25,7 +26,7 @@ export default function HomeScreen() {
     <View className="flex-1  bg-[#F9FAFB]">
       <HomeTopBar />
       <PromoCard />
-      <ScrollView className="flex-1 border border-green-500">
+      <ScrollView className="flex-1 ">
         <View className="flex-row justify-between mt-[6%] mx-[6%]">
           <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
             Today's Jobs
@@ -35,6 +36,20 @@ export default function HomeScreen() {
           </Text>
         </View>
         <ServiceCards />
+
+        {/* Active Jobs section starts here */}
+
+        <View className="flex-row justify-between mt-[6%] mx-[6%]">
+          <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
+            Active Jobs
+          </Text>
+          <Text className="font-poppins-semiBold text-base text-[#18649F] ">
+            View all
+          </Text>
+        </View>
+        <ServiceCards />
+
+        <PopularServices />
       </ScrollView>
     </View>
   );

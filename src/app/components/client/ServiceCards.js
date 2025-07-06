@@ -70,7 +70,7 @@ const serviceData = [
 
 const ServiceCard = ({ item }) => {
   return (
-    <TouchableOpacity className="bg-white py-[2%] px-[2%] rounded-xl my-[1%] shadow-sm overflow-hidden">
+    <TouchableOpacity className="bg-white py-[4%] px-[3%]  rounded-xl my-[1%] shadow-sm overflow-hidden">
       {/* Card Image */}
       <View className="w-[280px] h-[160px]">
         <Image
@@ -129,7 +129,7 @@ const ServiceCard = ({ item }) => {
 
 export default function ServiceCards() {
   return (
-    <View className="py-[2%] mx-[6.4%] px-[0%]">
+    <View className="mx-[1%] ">
       <FlatList
         data={serviceData}
         renderItem={({ item }) => <ServiceCard item={item} />}
@@ -139,8 +139,8 @@ export default function ServiceCards() {
         contentContainerStyle={{
           paddingHorizontal: "4%", // Increased padding to show peek better
         }}
-        snapToInterval={264} // Adjusted: 260 (card width) + 4 (margins)
-        decelerationRate="fast"
+        // snapToInterval={264} // Adjusted: 260 (card width) + 4 (margins)
+        // // decelerationRate="fast"
         snapToAlignment="start" // Ensures proper snapping alignment
       />
     </View>
