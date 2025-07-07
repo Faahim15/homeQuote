@@ -27,7 +27,7 @@ export default function HomeScreen() {
     <View className="flex-1  bg-[#F9FAFB]">
       <HomeTopBar />
       <PromoCard />
-      <ScrollView className="flex-1 h-full border border-green-500">
+      <ScrollView className="flex-1 h-full">
         <View className="flex-row justify-between mt-[6%] mx-[6%]">
           <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
             Today's Jobs

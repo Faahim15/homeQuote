@@ -55,7 +55,7 @@ const ServiceItem = ({ item }) => {
         XStyle.lightShadow,
         { width: cardWidth, height: verticalScale(100) },
       ]}
-      className="bg-white mr-[2%]  items-center justify-center "
+      className="bg-white mr-[2%] border border-[#D4E0EB] items-center justify-center "
     >
       <Image
         source={item.icon}
@@ -72,7 +72,7 @@ const ServiceItem = ({ item }) => {
 
 export default function PopularServices() {
   return (
-    <View className="mx-[6%] py-[3%]">
+    <View className="flex-1   mx-[6%] py-[3%]">
       {/* Header */}
       <View className="flex-row justify-between">
         <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
