@@ -11,6 +11,7 @@ import VerificationScreen from "../screens/auth/VerificationScreen";
 import ResetPasswordScreen from "../screens/auth/ResetPasswordScreen";
 import HomeScreen from "../screens/client/home/HomeScreen";
 import BottomTabs from "./BottomTabs";
+import PopularServiceScreen from "../screens/client/services/PopularServiceScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -44,11 +45,13 @@ export default function AppStackNavigation() {
 
       {/* Home Screens */}
 
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} /> 
+      <Stack.Screen name="PopularSeviceScreen" component={PopularServiceScreen} /> 
+      
 
       {/* BottomTabs */}
 
-      <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
     </Stack.Navigator>
   );
 }

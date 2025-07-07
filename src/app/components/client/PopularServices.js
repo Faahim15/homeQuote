@@ -10,7 +10,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { XStyle } from "../../constants/ReusableFunction";
 import { scale, verticalScale } from "../adaptive/Adaptiveness";
-
+import { useNavigation } from "@react-navigation/native";
 const screenWidth = Dimensions.get("window").width;
 const horizontalMargin = screenWidth * 0.12; // 6% left + 6% right
 const cardGap = scale(16); // total gap between cards (4% ~ 16px if scale = 4)
@@ -70,7 +70,8 @@ const ServiceItem = ({ item }) => {
   );
 };
 
-export default function PopularServices() {
+export default function PopularServices() { 
+  const navigation = useNavigation();
   return (
     <View className="flex-1   mx-[6%] py-[3%]">
       {/* Header */}
@@ -78,9 +79,11 @@ export default function PopularServices() {
         <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
           Popular Services
         </Text>
-        <Text className="font-poppins-semiBold text-base text-[#18649F] ">
+     <TouchableOpacity onPress={()=>navigation.navigate('PopularSeviceScreen')} >
+          <Text className="font-poppins-semiBold text-base text-[#18649F] ">
           View all
         </Text>
+     </TouchableOpacity>
       </View>
 
       {/* Services List */}
