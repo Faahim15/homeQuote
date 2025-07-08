@@ -1,11 +1,15 @@
-import { View,Text } from "react-native";
+import { View,Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
-export default function CustomHeader (){
+import { useNavigation } from "@react-navigation/native";
+export default function CustomHeader ({title='Popular Services'}){ 
+      const navigation = useNavigation();
       return ( 
-       <View className='flex-row ml-[6%] gap-[3%]' >
+       <View className='flex-row ml-[6%] gap-[3%]' > 
+         <TouchableOpacity onPress={()=>navigation.goBack()} >
+
              <Ionicons name="arrow-back" size={24} color="#000" /> 
-             <Text className='font-poppins-semiBold text-xl ' >Popular Services</Text>
+         </TouchableOpacity>
+             <Text className='font-poppins-semiBold text-xl ' >{title}</Text>
           </View>
    
       );

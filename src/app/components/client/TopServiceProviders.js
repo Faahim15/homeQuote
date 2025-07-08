@@ -7,50 +7,16 @@ import {
   Dimensions,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { scale, verticalScale } from "../adaptive/Adaptiveness";
 const { width } = Dimensions.get("window"); 
 import { useNavigation } from "@react-navigation/native";
-const cardWidth = width * 0.45; // 45% of screen width for responsiveness
-const data = [
-  {
-    id: "1",
-    name: "Jackson",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electricMan.png"),
-  },
-  {
-    id: "2",
-    name: "Jacob",
-    occupation: "Plumber",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/plumberMan.png"),
-  },
-  {
-    id: "3",
-    name: "Jackson",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electricMan.png"),
-  },
-  {
-    id: "4",
-    name: "Jackson",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/plumberMan.png"),
-  },
-  // Add more items if needed
-];
+import { scale, verticalScale } from "../adaptive/Adaptiveness";
+import { ProvidersCategories } from "../../constants/data/DummyData";
+const cardWidth = width * 0.45;   
 
-const renderItem = ({ item }) => (
+
+const ServiceCard = ({ item }) => (
   <View
     className="bg-white border border-[#D4E0EB] flex-1 justify-center items-center rounded-lg  mr-3"
-    // style={{ width: scale(156), height: verticalScale(210) }} 
     style={{ width: scale(149), height: verticalScale(210) }}
   >
     <Image
@@ -67,13 +33,13 @@ const renderItem = ({ item }) => (
 
     <View className="flex-row items-center">
       <Ionicons name="star" size={14} color="#F59E0B" />
-    
+
        <Text className="ml-1 font-poppins-500medium text-xs text-[#F59E0B]">{item.rating}</Text>
       <Text className="ml-auto font-poppins-400regular text-base text-[#18649F]">{item.price}</Text>
-     
+      
     </View>
 
-    <TouchableOpacity style={{width:scale(124), height:verticalScale(25)}} className="bg-[#0054A5] border border-[#0054A5] mt-[3%] rounded-md py-[3%] px-[3%]">
+    <TouchableOpacity style={{width:scale(124), height:verticalScale(25) }} className="bg-[#0054A5] border border-[#0054A5] mt-[3%] rounded-md py-[3%] px-[3%]">
       <Text className=" font-poppins-500medium text-[10px] text-center text-white text-sm font-semibold">
         Details
       </Text>
@@ -82,33 +48,36 @@ const renderItem = ({ item }) => (
   </View>
 );
 
-export default function ServiceProvider() { 
+export default function TopServiceProvider() { 
   const navigation = useNavigation();
   return (
-    <View className="flex-1 mb-[2%] mt-[3%]   mx-[6%] ">
-      <View className="flex-row justify-between">
+    <View className="flex-1 mb-[2%] mt-[3%]  mx-[6%] "> 
+    {ProvidersCategories.map((section,index)=>(
+   <View key={index}  className='flex-1 mt-[2%] ' >
+    <View className="flex-row justify-between">
         <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
-          Popular Service Providers
+          {section.title}
         </Text> 
-             <TouchableOpacity onPress={()=>navigation.navigate('ServiceProviderScreen')} >
+             <TouchableOpacity  >
                   <Text className="font-poppins-semiBold text-base text-[#18649F] ">
                   View all
                 </Text>
              </TouchableOpacity>
-        {/* <Text className="font-poppins-semiBold text-base text-[#18649F] ">
-          View all
-        </Text> */}
       </View>
-      <View className='flex-1 mt-[1.5%]' >
+    <View className='flex-1 mt-[1.5%]' >
         <FlatList
+          data={section.data} 
+          renderItem={({ item }) => <ServiceCard item={item} />}
+          keyExtractor={(item, idx) => idx.toString()}
           horizontal
-          data={data}
-          keyExtractor={(item) => item.id}
           showsHorizontalScrollIndicator={false}
           // contentContainerStyle={{ paddingHorizontal: 16 }}
-          renderItem={renderItem}
+
         />
       </View>
+   </View>
+    ))}
+      
     </View>
   );
 }

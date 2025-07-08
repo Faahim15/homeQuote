@@ -10,153 +10,18 @@ import {
   Image,
   Dimensions,
 } from "react-native"; 
+import {categories} from '../../constants/data/DummyData'
 const screenWidth = Dimensions.get("window").width;
 const horizontalMargin = screenWidth * 0.12; // 6% left + 6% right
 const cardGap = scale(16); // total gap between cards (4% ~ 16px if scale = 4)
-const cardWidth = (screenWidth - horizontalMargin - cardGap * 2) / 3;
-const categories = [
-  {
-    title: "Maintenance",
-    data: [
-      {
-        name: "Air Condition",
-        icon: require("../../../../assets/images/home/maintenance/AirCooler.png"),
-      },
-      {
-        name: "Electric Work",
-        icon: require("../../../../assets/images/home/maintenance/Multimeter.png"),
-      },
-      {
-        name: "Siding repair",
-        icon: require("../../../../assets/images/home/maintenance/repair.png"),
-      },
-      {
-        name: "Electric Work",
-        icon: require("../../../../assets/images/home/maintenance/Multimeter.png"),
-      },
-      {
-        name: "Electric Work",
-        icon: require("../../../../assets/images/home/maintenance/Multimeter.png"),
-      },
-    ],
-  },
-  {
-    title: "Cleaning",
-    data: [
-      {
-        name: "Home Flooring",
-        icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Gutter",
-        icon: require("../../../../assets/images/home/cleaning/gutter.png"),
-      },
-      {
-        name: "Carpet",
-        icon: require("../../../../assets/images/home/cleaning/laundry.png"),
-      },
-      {
-        name: "Carpet",
-        icon: require("../../../../assets/images/home/cleaning/laundry.png"),
-      },
-      {
-        name: "Carpet",
-        icon: require("../../../../assets/images/home/cleaning/laundry.png"),
-      },
-    ],
-  },
-  {
-    title: "Home improvement",
-    data: [
-      {
-        name: "Drilling",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "lawn",
-        icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Weed control",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-    ],
-  },
-  {
-    title: "Security",
-    data: [
-      {
-        name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-    ],
-  },
-  {
-    title: "Handyman Services",
-    data: [
-      {
-        name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-    ],
-  },
-  {
-    title: "Painting Services",
-    data: [
-      {
-        name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-    ],
-  },
-  {
-    title: "Other services",
-    data: [
-      {
-        name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-      {
-        name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
-      },
-    ],
-  },
-];
+const cardWidth = (screenWidth - horizontalMargin - cardGap * 2) / 3; 
+
+
 
 const ServiceCard = ({ item }) => (
 
     <TouchableOpacity
       style={[
-        XStyle.lightShadow,
         { width: cardWidth, height: verticalScale(100) },
       ]}
       className="bg-white mr-[2%] rounded-lg border border-[#D4E0EB] items-center justify-center "

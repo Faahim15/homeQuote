@@ -20,6 +20,19 @@ export const XStyle = StyleSheet.create({
       },
     }),
   },
+  // cardShadow: {
+  //   ...Platform.select({
+  //     ios: {
+  //       shadowColor: "#fff",
+  //       shadowOffset: { width: -2, height: -2 },
+  //       shadowOpacity: 0.15,
+  //       shadowRadius: 10,
+  //     },
+  //     android: {
+  //       elevation: 4,
+  //     },
+  //   }),
+  // },
   borderStyle: {
     width: SCREEN_WIDTH,
     borderTopLeftRadius: scale(20),

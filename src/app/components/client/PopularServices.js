@@ -51,11 +51,10 @@ const servicesData = [
 const ServiceItem = ({ item }) => {
   return (
     <TouchableOpacity
-      style={[
-        XStyle.lightShadow,
+      style={[   
         { width: cardWidth, height: verticalScale(100) },
       ]}
-      className="bg-white mr-[2%] border rounded-lg border-[#D4E0EB] items-center justify-center "
+      className="bg-white mr-[1%] border rounded-lg border-[#D4E0EB] items-center justify-center "
     >
       <Image
         source={item.icon}
@@ -87,7 +86,7 @@ export default function PopularServices() {
       </View>
 
       {/* Services List */}
-      <View className="flex-1  w-full mt-[1.6%] ">
+      <View className="mt-[1.6%] ">
         <FlatList
           data={servicesData}
           renderItem={({ item }) => <ServiceItem item={item} />}
