@@ -55,7 +55,7 @@ const ServiceItem = ({ item }) => {
         XStyle.lightShadow,
         { width: cardWidth, height: verticalScale(100) },
       ]}
-      className="bg-white mr-[2%] border border-[#D4E0EB] items-center justify-center "
+      className="bg-white mr-[2%] border rounded-lg border-[#D4E0EB] items-center justify-center "
     >
       <Image
         source={item.icon}
@@ -73,7 +73,7 @@ const ServiceItem = ({ item }) => {
 export default function PopularServices() { 
   const navigation = useNavigation();
   return (
-    <View className="flex-1   mx-[6%] py-[3%]">
+    <View className="flex-1  mx-[6%] py-[3%]">
       {/* Header */}
       <View className="flex-row justify-between">
         <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
@@ -87,7 +87,7 @@ export default function PopularServices() {
       </View>
 
       {/* Services List */}
-      <View className="flex-1  mt-[1.6%] ">
+      <View className="flex-1  w-full mt-[1.6%] ">
         <FlatList
           data={servicesData}
           renderItem={({ item }) => <ServiceItem item={item} />}
@@ -97,10 +97,13 @@ export default function PopularServices() {
           decelerationRate="fast"
           snapToAlignment="start"
           snapToInterval={264}
-          //   contentContainerStyle={{
-          //     paddingHorizontal: screenWidth * 0.06,
-          //   }}
+          contentContainerStyle={{
+              paddingRight: scale(60),
+            }} 
+            
         />
+
+
       </View>
     </View>
   );
