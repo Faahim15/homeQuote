@@ -4,18 +4,77 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { scale, verticalScale } from "../adaptive/Adaptiveness";
 import { XStyle } from "../../constants/ReusableFunction";
+import React, { useState } from "react";
+export default function PromoCard() { 
+  const [searchText, setSearchText] = useState("");
+  const [showRecentSearches, setShowRecentSearches] = useState(false);
+  const recentSearches = [
+    { id: "1", term: "Plumber", results: 232 },
+    { id: "2", term: "Cloth washer", results: 112 },
+    { id: "3", term: "Electrical Repairs", results: 12 },
+    { id: "4", term: "House Cleaning", results: 76 },
+    { id: "5", term: "Appliance Maintenance", results: 87 },
+    { id: "6", term: "Cloth washer", results: 112 }, 
+    { id: "7", term: "Cloth washer", results: 112 },
+    { id: "8", term: "Cloth washer", results: 112 },
+    { id: "9", term: "Cloth washer", results: 112 },
+    { id: "10", term: "Cloth washer", results: 112 },
+  ];
+  // Handle text input change
+  const handleSearchChange = (text) => {
+    setSearchText(text);
 
-export default function PromoCard({searchText,
-        handleSearchChange,
-        handleSearchFocus,
-        handleSearchBlur,
-        showRecentSearches,
-        filteredRecentSearches,
-        handleRecentSearchSelect,
-        clearRecentSearches,
-        renderRecentSearchItem}) { 
- 
-
+    // Show recent searches when user starts typing
+    if (text.length > 0) {
+      setShowRecentSearches(true);
+    } else {
+      setShowRecentSearches(false);
+    }
+  };
+  // Handle when user selects a recent search
+  const handleRecentSearchSelect = (searchTerm) => {
+    setSearchText(searchTerm);
+    setShowRecentSearches(false);
+    // Here you can trigger your search function
+    performSearch(searchTerm);
+  };
+  // Handle search focus
+  const handleSearchFocus = () => {
+    if (searchText.length > 0) {
+      setShowRecentSearches(true);
+    }
+  };
+    // Handle search blur (when user clicks outside)
+    const handleSearchBlur = () => {
+      // Small delay to allow recent search selection
+      setTimeout(() => {
+        setShowRecentSearches(false);
+      }, 200);
+    };
+    // Clear recent searches
+    const clearRecentSearches = () => {
+      // Here you can clear from your storage/state
+      console.log("Clear recent searches");
+    };
+    // Your search function
+    const performSearch = (term) => {
+      console.log("Searching for:", term);
+      // Implement your search logic here
+    };
+      // Filter recent searches based on current input
+      const filteredRecentSearches = recentSearches.filter((item) =>
+        item.term.toLowerCase().includes(searchText.toLowerCase())
+      );
+      const renderRecentSearchItem = ({ item }) => (
+        <TouchableOpacity
+          style={styles.recentSearchItem} 
+          className='font-poppins-400regular  '
+          onPress={() => handleRecentSearchSelect(item.term)}
+        >
+          <Text className='font-poppins-500medium text-sm text-[#6B7280]' >{item.term}</Text>
+          <Text className='font-poppins-400regular text-xs text-[#6B7280] ' style={styles.recentSearchResults}>{item.results} results </Text>
+        </TouchableOpacity>
+      );
   return (
     <View className="mx-[6.4%]  w-[87%]  mt-[3%] ">
       {/* Main Promo Card with Gradient Background */}
@@ -64,7 +123,7 @@ export default function PromoCard({searchText,
             <TextInput
               placeholder="Search here..."
               placeholderTextColor="#898989"
-              className="flex-1 ml-[2%]  font-poppins-400regular"
+              className="flex-1 ml-[2%] px-[2%] py-[3%]  font-poppins-400regular"
               color="#000" 
              
              value={searchText} 
@@ -79,11 +138,11 @@ export default function PromoCard({searchText,
       </LinearGradient>
        {/* Recent Searches Dropdown */}
                   {showRecentSearches && (
-                    <View style={styles.recentSearchesContainer}>
+                    <View style={{borderTopLeftRadius:scale(6), borderTopRightRadius:scale(6), borderBottomRightRadius:scale(6), borderBottomLeftRadius:scale(6)  }}  className=' bg-[#FFFFFF] mt-[2%] border border-[#DCDCDC] ' >
                       <View style={styles.recentSearchesHeader}>
-                        <Text style={styles.recentSearchesTitle}>Recent Searches</Text>
+                        <Text className='font-poppins-semiBold text-base text-[#6B7280]'>Recent Searches</Text>
                         <TouchableOpacity onPress={clearRecentSearches}>
-                          <Text style={styles.clearButton}>Clear</Text>
+                          <Text  className='font-poppins-400regular text-base text-[#175994]'>Clear</Text>
                         </TouchableOpacity>
                       </View>
             
@@ -100,64 +159,32 @@ export default function PromoCard({searchText,
   );
 }
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-  searchContainer: {
-    padding: 16,
-  },
-  searchInput: {
-    height: 50,
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    fontSize: 16,
-    backgroundColor: "#f8f9fa",
-  },
-  recentSearchesContainer: {
-    backgroundColor: "#fff",
-    height:200,  
-    color:'#000',
-    width:200,
-    borderTopWidth: 1,
-    borderTopColor: "#eee",
-    maxHeight: 300, // Limit height so it doesn't take full screen
-  },
+
   recentSearchesHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: 1,
+    paddingHorizontal: scale(16),
+    paddingVertical: verticalScale(16),
+    borderBottomWidth: scale(1),
     borderBottomColor: "#eee",
   },
-  recentSearchesTitle: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#333",
-  },
-  clearButton: {
-    color: "#007AFF",
-    fontSize: 14,
-  },
+
   recentSearchesList: {
-    maxHeight: 250,
+    maxHeight: verticalScale(280),
   },
   recentSearchItem: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: scale(16) ,
+    paddingVertical:  verticalScale(16) ,
     borderBottomWidth: 1,
     borderBottomColor: "#f0f0f0",
   },
   recentSearchTerm: {
     fontSize: 16,
-    color: "#333",
+    color: "#6B7280",
   },
   recentSearchResults: {
     fontSize: 14,

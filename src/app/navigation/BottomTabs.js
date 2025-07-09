@@ -6,9 +6,10 @@ import { Ionicons } from "@expo/vector-icons";
 
 // Import your screen components
 import ForgetPasswordScreen from "../screens/auth/ForgetPasswordScreen";
-import VerificationScreen from "../screens/auth/VerificationScreen";
 import OnboardingHomeScreen from "../screens/onboarding/OnboardingHomeScreen";
 import HomeScreen from "../screens/client/home/HomeScreen";
+import { scale, verticalScale } from "../components/adaptive/Adaptiveness";
+import ServiceProviderScreen from './../screens/client/services/ServiceProviderScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,15 +34,17 @@ export default function BottomTabs() {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "#3B82F6",
-        tabBarInactiveTintColor: "#6B7280",
-        tabBarStyle: {
+        tabBarActiveTintColor: "#175994",
+        tabBarInactiveTintColor: "#000000",
+        tabBarStyle: { 
+          height:verticalScale(64),
           backgroundColor: "white",
           borderTopWidth: 1,
           borderTopColor: "#E5E7EB",
-          height: 60,
-          paddingBottom: 8,
-          paddingTop: 8,
+          paddingBottom: verticalScale(8) ,
+          paddingTop: verticalScale(8),
+          borderBottomLeftRadius:scale(10),
+          borderBottomRightRadius:scale(10)
         },
         tabBarLabelStyle: {
           fontSize: 12,
@@ -50,9 +53,12 @@ export default function BottomTabs() {
         headerShown: false,
       })}
     >
-      <Tab.Screen name="Chat" component={HomeScreen} />
-      <Tab.Screen name="Profile" component={ForgetPasswordScreen} />
-      <Tab.Screen name="Profi" component={OnboardingHomeScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Jobs" component={ForgetPasswordScreen} />
+      <Tab.Screen name="Services" component={OnboardingHomeScreen} />
+      <Tab.Screen name="Profile" component={ServiceProviderScreen} />
+      <Tab.Screen name="Chat" component={ServiceProviderScreen} />
+      
     </Tab.Navigator>
   );
 }
