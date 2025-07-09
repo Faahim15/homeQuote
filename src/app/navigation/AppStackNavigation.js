@@ -46,9 +46,9 @@ export default function AppStackNavigation() {
 
       {/* Home Screens */}
 
-      <Stack.Screen name="HomeScreen" component={HomeScreen} /> 
+      {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> 
       <Stack.Screen name="PopularSeviceScreen" component={PopularServiceScreen} /> 
-      <Stack.Screen name="ServiceProviderScreen" component={ServiceProviderScreen} /> 
+      <Stack.Screen name="ServiceProviderScreen" component={ServiceProviderScreen} />  */}
       
 
       {/* BottomTabs */}

@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -9,10 +10,34 @@ import ForgetPasswordScreen from "../screens/auth/ForgetPasswordScreen";
 import OnboardingHomeScreen from "../screens/onboarding/OnboardingHomeScreen";
 import HomeScreen from "../screens/client/home/HomeScreen";
 import { scale, verticalScale } from "../components/adaptive/Adaptiveness";
-import ServiceProviderScreen from './../screens/client/services/ServiceProviderScreen';
+import ServiceProviderScreen from "./../screens/client/services/ServiceProviderScreen";
+import PopularServiceScreen from "../screens/client/services/PopularServiceScreen";
+import ElectricianProviderScreen from "../screens/client/services/ElectricianProviderScreen";
+import ProviderDetailsScreen from "../screens/client/services/ProviderDetailsScreen";
 
 const Tab = createBottomTabNavigator();
-
+const Stack = createStackNavigator();
+const HomeStack = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="HomeScreen" component={HomeScreen} />
+    <Stack.Screen
+      name="PopularServiceScreen"
+      component={PopularServiceScreen}
+    />
+    <Stack.Screen
+      name="ServiceProviderScreen"
+      component={ServiceProviderScreen}
+    />
+    <Stack.Screen
+      name="ElectricianProviderScreen"
+      component={ElectricianProviderScreen}
+    />
+    <Stack.Screen
+      name="ProviderDetailsScreen"
+      component={ProviderDetailsScreen}
+    />
+  </Stack.Navigator>
+);
 export default function BottomTabs() {
   return (
     <Tab.Navigator
@@ -36,15 +61,15 @@ export default function BottomTabs() {
         },
         tabBarActiveTintColor: "#175994",
         tabBarInactiveTintColor: "#000000",
-        tabBarStyle: { 
-          height:verticalScale(64),
+        tabBarStyle: {
+          height: verticalScale(64),
           backgroundColor: "white",
           borderTopWidth: 1,
           borderTopColor: "#E5E7EB",
-          paddingBottom: verticalScale(8) ,
+          paddingBottom: verticalScale(8),
           paddingTop: verticalScale(8),
-          borderBottomLeftRadius:scale(10),
-          borderBottomRightRadius:scale(10)
+          borderBottomLeftRadius: scale(10),
+          borderBottomRightRadius: scale(10),
         },
         tabBarLabelStyle: {
           fontSize: 12,
@@ -53,12 +78,11 @@ export default function BottomTabs() {
         headerShown: false,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Jobs" component={ForgetPasswordScreen} />
       <Tab.Screen name="Services" component={OnboardingHomeScreen} />
       <Tab.Screen name="Profile" component={ServiceProviderScreen} />
       <Tab.Screen name="Chat" component={ServiceProviderScreen} />
-      
     </Tab.Navigator>
   );
 }

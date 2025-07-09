@@ -78,7 +78,7 @@ export default function PopularServices() {
         <Text className="font-poppins-semiBold text-base text-[#6B7280] ">
           Popular Services
         </Text>
-     <TouchableOpacity onPress={()=>navigation.navigate('PopularSeviceScreen')} >
+     <TouchableOpacity onPress={()=>navigation.navigate('PopularServiceScreen')} >
           <Text className="font-poppins-semiBold text-base text-[#18649F] ">
           View all
         </Text>
