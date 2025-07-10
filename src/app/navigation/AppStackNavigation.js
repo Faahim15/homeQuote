@@ -13,6 +13,7 @@ import HomeScreen from "../screens/client/home/HomeScreen";
 import BottomTabs from "./BottomTabs";
 import PopularServiceScreen from "../screens/client/services/PopularServiceScreen";
 import ServiceProviderScreen from "../screens/client/services/ServiceProviderScreen";
+import ViewAllGalleryScreen from "../screens/client/services/ViewAllGalleryScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -49,11 +50,14 @@ export default function AppStackNavigation() {
       {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> 
       <Stack.Screen name="PopularSeviceScreen" component={PopularServiceScreen} /> 
       <Stack.Screen name="ServiceProviderScreen" component={ServiceProviderScreen} />  */}
-      
+      <Stack.Screen
+        name="ViewAllGalleryScreen"
+        component={ViewAllGalleryScreen}
+      />
 
       {/* BottomTabs */}
 
-      <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
     </Stack.Navigator>
   );
 }

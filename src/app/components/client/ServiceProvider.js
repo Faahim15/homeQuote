@@ -101,7 +101,9 @@ export default function ServiceProvider() {
         <Text className="font-poppins-semiBold text-base text-[#6B7280]">
           Popular Service Providers
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("ServiceProviderScreen")}
+        >
           <Text className="font-poppins-semiBold text-base text-[#18649F]">
             View all
           </Text>

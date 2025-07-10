@@ -1,4 +1,11 @@
-import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {
   scale,
@@ -7,8 +14,12 @@ import {
 import ArrowBack from "../../../components/auth/ArrowBack";
 import { XStyle } from "../../../constants/ReusableFunction";
 import CustomButton from "../../../components/client/CustomButton";
-
+import TimeSlot from "../../../components/client/PDetails/TimeSlot";
+import { imageData } from "../../../constants/data/provider/ImageData";
+import Gallery from "../../../components/client/PDetails/Gallery";
+import { useNavigation } from "@react-navigation/native";
 export default function ProviderDetailsScreen() {
+  const navigation = useNavigation();
   return (
     <View className="flex-1 bg-white">
       <ScrollView>
@@ -120,35 +131,44 @@ export default function ProviderDetailsScreen() {
         {/* Book button */}
         <CustomButton title="Book" />
 
-        <View className="flex-row justify-evenly mx-[6%] mt-[3%] ">
-          <View
-            style={[
-              XStyle.lightShadow,
-              { width: scale(60), height: verticalScale(30) },
-            ]}
-            className="bg-white justify-center border border-[#D4E0EB] items-center"
-          >
-            <Text className="font-poppins-500medium text-xs text-center text-[#565656] ">
-              7:00 AM
-            </Text>
-          </View>
+        <View className="flex-row justify-start gap-[3%] mx-[6%] mt-[3%] ">
+          <TimeSlot title="7:00 AM" />
           <View>
             <Text className="font-poppins-semiBold pt-[2%] text-base text-[#919191] ">
               To
             </Text>
           </View>
-          <View
-            style={[
-              XStyle.lightShadow,
-              { width: scale(60), height: verticalScale(30) },
-            ]}
-            className="bg-white justify-center border border-[#D4E0EB] items-center"
-          >
-            <Text className="font-poppins-500medium text-xs text-center text-[#565656] ">
-              7:00 AM
+          <TimeSlot title="10:00 PM" />
+        </View>
+
+        <View className="mt-[3%] mx-[6%] ">
+          <Text className="font-poppins-semiBold text-base mt-[2%] text-[#565656]">
+            Bio
+          </Text>
+          <Text className="font-poppins-500medium text-xs text-justify text-[#565656]">
+            I'm Jackson , a licensed electrician with a passion for safe,
+            efficient, and code-compliant electrical work. With over 30 years of
+            hands-on experience, I’m committed to powering your home with
+            precision and care.
+          </Text>
+        </View>
+        {/* Gallery Section */}
+        <View>
+          <View className="flex-row justify-between mx-[6%] mt-[3%] ">
+            <Text className="font-poppins-semiBold text-base text-[#565656]">
+              Gallery
             </Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ViewAllGalleryScreen")}
+            >
+              <Text className="font-poppins-500medium text-base text-[#175994]">
+                View all
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
+
+        <Gallery />
       </ScrollView>
     </View>
   );
