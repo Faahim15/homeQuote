@@ -18,11 +18,19 @@ import TimeSlot from "../../../components/client/PDetails/TimeSlot";
 import { imageData } from "../../../constants/data/provider/ImageData";
 import Gallery from "../../../components/client/PDetails/Gallery";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
+import StarRating from "../../../components/client/PDetails/StarRating";
+import Reviews from "../../../components/client/PDetails/Reviews";
+import Banner from "../../../components/client/PDetails/Banner";
+import PerfomanceMetrics from "../../../components/client/PDetails/PerfomanceMetrics";
+
 export default function ProviderDetailsScreen() {
   const navigation = useNavigation();
   return (
     <View className="flex-1 bg-white">
       <ScrollView>
+        {/* Baner */}
+
         <LinearGradient
           colors={["#319FCA", "#18649F"]}
           start={{ x: 0, y: 0 }}
@@ -49,30 +57,8 @@ export default function ProviderDetailsScreen() {
             />
           </View>
         </LinearGradient>
-        <View className="flex-row mt-[3%] mx-[6%] justify-between">
-          <View>
-            <Text className="font-poppins-semiBold text-2xl text-[#565656]">
-              Jackson
-            </Text>
-            <Text className="font-poppins-500medium text-base text-[#565656]">
-              Electrician
-            </Text>
-          </View>
-          <View className="flex-row ">
-            <Image
-              style={{
-                height: verticalScale(44),
-                width: scale(44),
-                marginRight: scale(24),
-              }}
-              source={require("../../../../../assets/images/home/booked/call.png")}
-            />
-            <Image
-              style={{ height: verticalScale(44), width: scale(44) }}
-              source={require("../../../../../assets/images/home/booked/chatlogo.png")}
-            />
-          </View>
-        </View>
+
+        <Banner />
         <View className="flex-row mt-[3%] mx-[6%] justify-between">
           <Text className="font-poppins-semiBold text-base text-[#6B7280]">
             Booking Hours
@@ -82,54 +68,19 @@ export default function ProviderDetailsScreen() {
           </Text>
         </View>
 
-        <View
-          style={[
-            XStyle.lightShadow,
-            { height: verticalScale(93), width: scale(327) },
-          ]}
-          className="flex-row justify-center items-center border rounded-lg border-[#D4E0EB] gap-[20%] bg-[#FFFFFF] mt-[3%] mx-[6%] "
-        >
-          <View>
-            <Image
-              source={require("../../../../../assets/images/home/booked/completed.png")}
-            />
-            <Text className="font-poppins-500medium text-base text-[#565656]">
-              4.8
-            </Text>
-            <Text className="font-poppins-500medium text-[10px] text-[#565656]">
-              Rating
-            </Text>
-          </View>
-          <View>
-            <Image
-              source={require("../../../../../assets/images/home/booked/expericence.png")}
-            />
-            <Text className="font-poppins-500medium text-base text-[#565656]">
-              56 Orders
-            </Text>
-            <Text className="font-poppins-500medium text-[10px] text-[#565656]">
-              completed
-            </Text>
-          </View>
-          <View>
-            <Image
-              source={require("../../../../../assets/images/home/booked/expericence.png")}
-            />
-            <Text className="font-poppins-500medium text-base text-[#565656]">
-              4 Years
-            </Text>
-            <Text className="font-poppins-500medium text-[10px] text-[#565656]">
-              Experience
-            </Text>
-          </View>
-        </View>
+        {/* PerfomanceMetrics */}
+
+        <PerfomanceMetrics />
         <View className="mx-[6%] mt-[3%] ">
           <Text className="font-poppins-semiBold text-base text-[#565656]">
             Skills
           </Text>
         </View>
+
         {/* Book button */}
         <CustomButton title="Book" />
+
+        {/* Time Solt */}
 
         <View className="flex-row justify-start gap-[3%] mx-[6%] mt-[3%] ">
           <TimeSlot title="7:00 AM" />
@@ -141,6 +92,7 @@ export default function ProviderDetailsScreen() {
           <TimeSlot title="10:00 PM" />
         </View>
 
+        {/* Bio  */}
         <View className="mt-[3%] mx-[6%] ">
           <Text className="font-poppins-semiBold text-base mt-[2%] text-[#565656]">
             Bio
@@ -152,6 +104,7 @@ export default function ProviderDetailsScreen() {
             precision and care.
           </Text>
         </View>
+
         {/* Gallery Section */}
         <View>
           <View className="flex-row justify-between mx-[6%] mt-[3%] ">
@@ -168,7 +121,22 @@ export default function ProviderDetailsScreen() {
           </View>
         </View>
 
+        {/* Images section */}
         <Gallery />
+
+        {/* Reviews */}
+        <View className="mx-[6%] mt-[3%] ">
+          <View>
+            <Text className="font-poppins-semiBold text-base text-[#565656]">
+              Review
+            </Text>
+          </View>
+          <View className="">
+            <Reviews rating={3.5} />
+            <Reviews rating={5} />
+            <Reviews rating={2} />
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
