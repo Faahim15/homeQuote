@@ -14,6 +14,7 @@ import BottomTabs from "./BottomTabs";
 import PopularServiceScreen from "../screens/client/services/PopularServiceScreen";
 import ServiceProviderScreen from "../screens/client/services/ServiceProviderScreen";
 import ViewAllGalleryScreen from "../screens/client/services/ViewAllGalleryScreen";
+import BookProviderScreen from "../screens/client/services/booked/BookProviderScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -54,6 +55,7 @@ export default function AppStackNavigation() {
         name="ViewAllGalleryScreen"
         component={ViewAllGalleryScreen}
       />
+      <Stack.Screen name="BookProviderScreen" component={BookProviderScreen} />
 
       {/* BottomTabs */}
 

@@ -37,13 +37,12 @@ export const categories = [
       },
       {
         name: "Carpet",
-        icon: require("../../../../assets/images/home/cleaning/laundry.png"),
+        icon: require("../../../../assets/images/home/cleaning/gutter.png"),
       },
       {
         name: "Carpet",
-        icon: require("../../../../assets/images/home/cleaning/laundry.png"),
+        icon: require("../../../../assets/images/home/cleaning/gutter.png"),
       },
-      
     ],
   },
   {
@@ -51,7 +50,7 @@ export const categories = [
     data: [
       {
         name: "Drilling",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "lawn",
@@ -59,7 +58,7 @@ export const categories = [
       },
       {
         name: "Weed control",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
     ],
   },
@@ -68,15 +67,15 @@ export const categories = [
     data: [
       {
         name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
     ],
   },
@@ -85,15 +84,15 @@ export const categories = [
     data: [
       {
         name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
     ],
   },
@@ -102,15 +101,15 @@ export const categories = [
     data: [
       {
         name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
     ],
   },
@@ -119,167 +118,169 @@ export const categories = [
     data: [
       {
         name: "Cameras",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Burglar alarm",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
       {
         name: "Sturdy lock",
-       icon: require("../../../../assets/images/home/cleaning/mop.png"),
+        icon: require("../../../../assets/images/home/cleaning/mop.png"),
       },
     ],
   },
-]; 
+];
 
+export const ProvidersCategories = [
+  {
+    title: "Electrician Providers",
+    data: [
+      {
+        id: "1",
+        name: "Jackson",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician1.png"),
+      },
+      {
+        id: "2",
+        name: "Jacob",
+        occupation: "Plumber",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "3",
+        name: "Gill",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "4",
+        name: "Hakim",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+    ],
+  },
+  {
+    title: "Electrician Providers",
+    data: [
+      {
+        id: "1",
+        name: "Jackson",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician1.png"),
+      },
+      {
+        id: "2",
+        name: "Jacob",
+        occupation: "Plumber",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "3",
+        name: "Gill",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "4",
+        name: "Hakim",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+    ],
+  },
 
-export const ProvidersCategories =[
-{
-  title:'Electrician Providers', 
-   data: [
   {
-    id: "1",
-    name: "Jackson",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician1.png"),
+    title: "Electrician Providers",
+    data: [
+      {
+        id: "1",
+        name: "Jackson",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician1.png"),
+      },
+      {
+        id: "2",
+        name: "Jacob",
+        occupation: "Plumber",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "3",
+        name: "Gill",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "4",
+        name: "Hakim",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+    ],
   },
-  {
-    id: "2",
-    name: "Jacob",
-    occupation: "Plumber",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "3",
-    name: "Gill",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "4",
-    name: "Hakim",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  }]
-}, 
-{
-  title:'Electrician Providers', 
-   data: [
-  {
-    id: "1",
-    name: "Jackson",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician1.png"),
-  },
-  {
-    id: "2",
-    name: "Jacob",
-    occupation: "Plumber",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "3",
-    name: "Gill",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "4",
-    name: "Hakim",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  }]
-}, 
 
-{
-  title:'Electrician Providers', 
-   data: [
   {
-    id: "1",
-    name: "Jackson",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician1.png"),
+    title: "Plumber Providers",
+    data: [
+      {
+        id: "1",
+        name: "Jackson",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician1.png"),
+      },
+      {
+        id: "2",
+        name: "Jacob",
+        occupation: "Plumber",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "3",
+        name: "Gill",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+      {
+        id: "4",
+        name: "Hakim",
+        occupation: "Electrician",
+        rating: 4.8,
+        price: "$100",
+        image: require("../../../../assets/images/home/electrician/electrician2.png"),
+      },
+    ],
   },
-  {
-    id: "2",
-    name: "Jacob",
-    occupation: "Plumber",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "3",
-    name: "Gill",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "4",
-    name: "Hakim",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  }]
-}, 
- 
-{
-  title:'Plumber Providers', 
-   data: [
-  {
-    id: "1",
-    name: "Jackson",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician1.png"),
-  },
-  {
-    id: "2",
-    name: "Jacob",
-    occupation: "Plumber",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "3",
-    name: "Gill",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  },
-  {
-    id: "4",
-    name: "Hakim",
-    occupation: "Electrician",
-    rating: 4.8,
-    price: "$100",
-    image: require("../../../../assets/images/home/electrician/electrician2.png"),
-  }]
-}
-
-]
+];
