@@ -165,11 +165,11 @@ const LocationPicker = () => {
 
   return (
     <View className="mt-[3%]">
-      {/* <Text className="text-lg font-semibold mb-4 text-gray-800">
-        Location Picker Demo
-      </Text> */}
+      <Text className="font-poppins-400regular text-base text-[#000] mb-[2%]">
+        Location
+      </Text>
 
-      <View className="flex-row items-center border border-gray-300 rounded-lg px-3 py-2 mb-4">
+      <View className="flex-row items-center border border-gray-300 rounded-lg px-[3%] py-[2%]">
         <Ionicons
           name="location-outline"
           size={20}
@@ -180,7 +180,8 @@ const LocationPicker = () => {
           placeholder="House location"
           value={selectedLocation}
           onChangeText={setSelectedLocation}
-          className="flex-1 ml-2 text-gray-800"
+          className="flex-1 ml-2 text-black"
+          placeholderTextColor="#898989"
           multiline
         />
         <TouchableOpacity
@@ -191,7 +192,7 @@ const LocationPicker = () => {
           <Ionicons
             name="search-outline"
             size={20}
-            color={isLoading ? "#ccc" : "#007AFF"}
+            color={isLoading ? "#ccc" : "#6B7280"}
           />
         </TouchableOpacity>
       </View>
