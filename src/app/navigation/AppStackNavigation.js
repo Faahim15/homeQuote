@@ -9,12 +9,10 @@ import SignUpScreen from "../screens/auth/SignUpScreen";
 import ForgetPasswordScreen from "../screens/auth/ForgetPasswordScreen";
 import VerificationScreen from "../screens/auth/VerificationScreen";
 import ResetPasswordScreen from "../screens/auth/ResetPasswordScreen";
-import HomeScreen from "../screens/client/home/HomeScreen";
 import BottomTabs from "./BottomTabs";
-import PopularServiceScreen from "../screens/client/services/PopularServiceScreen";
-import ServiceProviderScreen from "../screens/client/services/ServiceProviderScreen";
 import ViewAllGalleryScreen from "../screens/client/services/ViewAllGalleryScreen";
 import BookProviderScreen from "../screens/client/services/booked/BookProviderScreen";
+import PlaceSearchModal from "../components/shared/PlaceSearchModal";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -56,6 +54,13 @@ export default function AppStackNavigation() {
         component={ViewAllGalleryScreen}
       />
       <Stack.Screen name="BookProviderScreen" component={BookProviderScreen} />
+
+      {/* Location Picker */}
+      <Stack.Screen
+        name="PlaceSearchModal"
+        component={PlaceSearchModal}
+        options={{ presentation: "modal", title: "Search Location" }}
+      />
 
       {/* BottomTabs */}
 
