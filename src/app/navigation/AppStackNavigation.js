@@ -13,6 +13,8 @@ import BottomTabs from "./BottomTabs";
 import ViewAllGalleryScreen from "../screens/client/services/ViewAllGalleryScreen";
 import BookProviderScreen from "../screens/client/services/booked/BookProviderScreen";
 import PlaceSearchModal from "../components/shared/PlaceSearchModal";
+import BookingCalendar from "./../components/shared/BookingCalender";
+import BookingDetailsScreen from "../screens/client/services/booked/BookingDetailsScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -53,7 +55,15 @@ export default function AppStackNavigation() {
         name="ViewAllGalleryScreen"
         component={ViewAllGalleryScreen}
       />
+
+      {/* book service ProviderScreen */}
+
       <Stack.Screen name="BookProviderScreen" component={BookProviderScreen} />
+      <Stack.Screen name="BookingCalender" component={BookingCalendar} />
+      <Stack.Screen
+        name="BookingDetailsScreen"
+        component={BookingDetailsScreen}
+      />
 
       {/* Location Picker */}
       <Stack.Screen

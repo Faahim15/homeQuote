@@ -8,9 +8,13 @@ import {
   Alert,
 } from "react-native";
 import { Calendar } from "react-native-calendars";
+import { scale, verticalScale } from "../adaptive/Adaptiveness";
+import CustomTitle from "../client/PDetails/CustomTitle";
+import { useNavigation } from "@react-navigation/native";
 // import { ArrowLeft } from 'lucide-react-native';
 
 const BookingCalendar = () => {
+  const navigation = useNavigation();
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
@@ -40,11 +44,7 @@ const BookingCalendar = () => {
       return;
     }
 
-    Alert.alert(
-      "Booking Confirmed",
-      `Date: ${selectedDate}\nTime: ${selectedTime}`,
-      [{ text: "OK", onPress: () => console.log("Booking saved") }]
-    );
+    navigation.navigate("BookingDetailsScreen");
   };
 
   // Get today's date for minDate
@@ -76,111 +76,117 @@ const BookingCalendar = () => {
     : {};
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F9F9F9]">
-      <ScrollView className="flex-1 ">
-        {/* Date Selection */}
-        <View className="flex-1 mb-8 mt-[3%] ">
-          <Text className="font-poppins-semiBold text-base text-[#1F2937]">
-            Select Date
+    <View className="flex-1 px-[6%] bg-[#F9F9F9]">
+      <View>
+        <CustomTitle title="Book Jackson" />
+      </View>
+
+      {/* Date Selection */}
+      <View
+        style={{ width: scale(327), height: verticalScale(303) }}
+        className=" bg-[#F9F9F9]  mt-[3%] "
+      >
+        <Text className="font-poppins-semiBold text-base text-[#1F2937]">
+          Select Date
+        </Text>
+
+        <View className=" bg-[#F9F9F9] flex-1 mt-[2%] border border-[#D4E0EB]  rounded-lg overflow-hidden">
+          <Calendar
+            current={today}
+            onDayPress={onDayPress}
+            markedDates={markedDates}
+            minDate={today}
+            theme={calendarTheme}
+            enableSwipeMonths={true}
+            hideExtraDays={true}
+            firstDay={0}
+            style={{
+              borderRadius: 8,
+              paddingBottom: 10,
+            }}
+          />
+        </View>
+      </View>
+
+      {/* Show selected date */}
+      {selectedDate && (
+        <View className="mb-6 p-4 bg-[#F9F9F9] rounded-lg">
+          <Text className="text-blue-800 font-poppins-500medium">
+            Selected: {selectedDate}
+          </Text>
+        </View>
+      )}
+
+      {/* Time Selection - Only show if date is selected */}
+      {selectedDate && (
+        <View className="mb-[9%] ">
+          <Text className="font-poppins-semiBold text-base text-[#565656]">
+            Select Time
           </Text>
 
-          <View className="bg-white flex-1 mt-[2%] border border-[#D4E0EB]  rounded-lg overflow-hidden">
-            <Calendar
-              current={today}
-              onDayPress={onDayPress}
-              markedDates={markedDates}
-              minDate={today}
-              theme={calendarTheme}
-              enableSwipeMonths={true}
-              hideExtraDays={true}
-              firstDay={0}
-              style={{
-                borderRadius: 8,
-                paddingBottom: 10,
-              }}
-            />
+          {/* AM Times */}
+          <View className="mb-[2%]">
+            <Text className="text-sm font-poppins-400regular text-[#565656] mb-[1.5%]">
+              AM
+            </Text>
+            <View className="flex-row flex-wrap gap-2">
+              {amTimes.map((time) => (
+                <TouchableOpacity
+                  key={time}
+                  onPress={() => setSelectedTime(time)}
+                  className={`px-4 py-3 rounded-lg border ${
+                    selectedTime === time
+                      ? "bg-[#319FCA] border-[#319FCA]"
+                      : "bg-white font-poppins-500medium  border-[#D4E0EB]"
+                  }`}
+                >
+                  <Text
+                    className={`text-sm font-poppins-500medium ${
+                      selectedTime === time ? "text-white" : "text-[#175994]"
+                    }`}
+                  >
+                    {time}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
+          {/* PM Times */}
+          <View className="bg-[#F9F9F9]">
+            <Text className="text-sm font-poppins-400regular text-[#565656] mb-[1.5%]">
+              PM
+            </Text>
+            <View className="flex-row flex-wrap gap-2">
+              {pmTimes.map((time) => (
+                <TouchableOpacity
+                  key={time}
+                  onPress={() => setSelectedTime(time)}
+                  className={`px-4 py-3 rounded-lg border ${
+                    selectedTime === time
+                      ? "bg-[#319FCA] border-[#319FCA]"
+                      : "bg-white font-poppins-500medium  border-[#D4E0EB]"
+                  }`}
+                >
+                  <Text
+                    className={`text-sm font-poppins-500medium ${
+                      selectedTime === time ? "text-white" : "text-[#175994]"
+                    }`}
+                  >
+                    {time}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         </View>
+      )}
 
-        {/* Show selected date */}
-        {selectedDate && (
-          <View className="mb-6 p-4 bg-white rounded-lg">
-            <Text className="text-blue-800 font-poppins-500medium">
-              Selected: {selectedDate}
-            </Text>
-          </View>
-        )}
-
-        {/* Time Selection - Only show if date is selected */}
-        {selectedDate && (
-          <View className="mb-[9%] ">
-            <Text className="font-poppins-semiBold text-base text-[#565656]">
-              Select Time
-            </Text>
-
-            {/* AM Times */}
-            <View className="mb-[2%]">
-              <Text className="text-sm font-poppins-400regular text-[#565656] mb-[1.5%]">
-                AM
-              </Text>
-              <View className="flex-row flex-wrap gap-2">
-                {amTimes.map((time) => (
-                  <TouchableOpacity
-                    key={time}
-                    onPress={() => setSelectedTime(time)}
-                    className={`px-4 py-3 rounded-lg border ${
-                      selectedTime === time
-                        ? "bg-[#319FCA] border-[#319FCA]"
-                        : "bg-white font-poppins-500medium  border-[#D4E0EB]"
-                    }`}
-                  >
-                    <Text
-                      className={`text-sm font-poppins-500medium ${
-                        selectedTime === time ? "text-white" : "text-[#175994]"
-                      }`}
-                    >
-                      {time}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
-              </View>
-            </View>
-
-            {/* PM Times */}
-            <View>
-              <Text className="text-sm font-poppins-400regular text-[#565656] mb-[1.5%]">
-                PM
-              </Text>
-              <View className="flex-row flex-wrap gap-2">
-                {pmTimes.map((time) => (
-                  <TouchableOpacity
-                    key={time}
-                    onPress={() => setSelectedTime(time)}
-                    className={`px-4 py-3 rounded-lg border ${
-                      selectedTime === time
-                        ? "bg-[#319FCA] border-[#319FCA]"
-                        : "bg-white font-poppins-500medium  border-[#D4E0EB]"
-                    }`}
-                  >
-                    <Text
-                      className={`text-sm font-medium ${
-                        selectedTime === time ? "text-white" : "text-[#175994]"
-                      }`}
-                    >
-                      {time}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
-              </View>
-            </View>
-          </View>
-        )}
-      </ScrollView>
       {/* Save Button */}
-      <View className="">
+      <View className="flex-1  justify-end pb-[10%] ">
         <TouchableOpacity
           className={`py-[3.5%] rounded-lg ${
-            selectedDate && selectedTime ? "bg-[#175994]" : "bg-gray-300"
+            selectedDate && selectedTime ? "bg-[#175994]" : "bg-gray-400"
           }`}
           onPress={handleSave}
         >
@@ -189,7 +195,7 @@ const BookingCalendar = () => {
           </Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
