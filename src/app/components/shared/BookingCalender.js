@@ -76,23 +76,15 @@ const BookingCalendar = () => {
     : {};
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView className="flex-1 h-[80%]   px-4 py-6">
-        {/* Header */}
-        {/* <View className="flex-row items-center mb-6">
-          <TouchableOpacity className="mr-4">
-            <ArrowLeft size={24} color="#000" />
-          </TouchableOpacity>
-          <Text className="text-xl font-semibold text-gray-900">Book Jackson</Text>
-        </View> */}
-
+    <SafeAreaView className="flex-1 bg-[#F9F9F9]">
+      <ScrollView className="flex-1 ">
         {/* Date Selection */}
-        <View className="flex-1 mb-8 border  border-green-500 ">
-          <Text className="text-lg font-medium text-gray-900 mb-4">
+        <View className="flex-1 mb-8 mt-[3%] ">
+          <Text className="font-poppins-semiBold text-base text-[#1F2937]">
             Select Date
           </Text>
 
-          <View className="bg-gray-50 flex-1  border  border-green-500 h-[80%]  rounded-lg overflow-hidden">
+          <View className="bg-white flex-1 mt-[2%] border border-[#D4E0EB]  rounded-lg overflow-hidden">
             <Calendar
               current={today}
               onDayPress={onDayPress}
@@ -112,8 +104,8 @@ const BookingCalendar = () => {
 
         {/* Show selected date */}
         {selectedDate && (
-          <View className="mb-6 p-4 bg-blue-50 rounded-lg">
-            <Text className="text-blue-800 font-medium">
+          <View className="mb-6 p-4 bg-white rounded-lg">
+            <Text className="text-blue-800 font-poppins-500medium">
               Selected: {selectedDate}
             </Text>
           </View>
@@ -121,14 +113,16 @@ const BookingCalendar = () => {
 
         {/* Time Selection - Only show if date is selected */}
         {selectedDate && (
-          <View className="mb-8 border border-red-600 ">
-            <Text className="text-lg font-medium text-gray-900 mb-4">
+          <View className="mb-[9%] ">
+            <Text className="font-poppins-semiBold text-base text-[#565656]">
               Select Time
             </Text>
 
             {/* AM Times */}
-            <View className="mb-4">
-              <Text className="text-sm font-medium text-gray-600 mb-3">AM</Text>
+            <View className="mb-[2%]">
+              <Text className="text-sm font-poppins-400regular text-[#565656] mb-[1.5%]">
+                AM
+              </Text>
               <View className="flex-row flex-wrap gap-2">
                 {amTimes.map((time) => (
                   <TouchableOpacity
@@ -136,13 +130,13 @@ const BookingCalendar = () => {
                     onPress={() => setSelectedTime(time)}
                     className={`px-4 py-3 rounded-lg border ${
                       selectedTime === time
-                        ? "bg-blue-500 border-blue-500"
-                        : "bg-white border-gray-200"
+                        ? "bg-[#319FCA] border-[#319FCA]"
+                        : "bg-white font-poppins-500medium  border-[#D4E0EB]"
                     }`}
                   >
                     <Text
-                      className={`text-sm font-medium ${
-                        selectedTime === time ? "text-white" : "text-gray-700"
+                      className={`text-sm font-poppins-500medium ${
+                        selectedTime === time ? "text-white" : "text-[#175994]"
                       }`}
                     >
                       {time}
@@ -154,7 +148,9 @@ const BookingCalendar = () => {
 
             {/* PM Times */}
             <View>
-              <Text className="text-sm font-medium text-gray-600 mb-3">PM</Text>
+              <Text className="text-sm font-poppins-400regular text-[#565656] mb-[1.5%]">
+                PM
+              </Text>
               <View className="flex-row flex-wrap gap-2">
                 {pmTimes.map((time) => (
                   <TouchableOpacity
@@ -162,13 +158,13 @@ const BookingCalendar = () => {
                     onPress={() => setSelectedTime(time)}
                     className={`px-4 py-3 rounded-lg border ${
                       selectedTime === time
-                        ? "bg-blue-500 border-blue-500"
-                        : "bg-white border-gray-200"
+                        ? "bg-[#319FCA] border-[#319FCA]"
+                        : "bg-white font-poppins-500medium  border-[#D4E0EB]"
                     }`}
                   >
                     <Text
                       className={`text-sm font-medium ${
-                        selectedTime === time ? "text-white" : "text-gray-700"
+                        selectedTime === time ? "text-white" : "text-[#175994]"
                       }`}
                     >
                       {time}
@@ -181,14 +177,14 @@ const BookingCalendar = () => {
         )}
       </ScrollView>
       {/* Save Button */}
-      <View className="px-4">
+      <View className="">
         <TouchableOpacity
-          className={`py-4 rounded-lg ${
-            selectedDate && selectedTime ? "bg-blue-600" : "bg-gray-300"
+          className={`py-[3.5%] rounded-lg ${
+            selectedDate && selectedTime ? "bg-[#175994]" : "bg-gray-300"
           }`}
           onPress={handleSave}
         >
-          <Text className="text-white text-center text-lg font-semibold">
+          <Text className="text-white text-center font-poppins-bold text-base">
             Save
           </Text>
         </TouchableOpacity>
