@@ -44,7 +44,7 @@ const BookingCalendar = () => {
       return;
     }
 
-    navigation.navigate("BookProviderScreen");
+    navigation.goBack();
   };
 
   // Get today's date for minDate

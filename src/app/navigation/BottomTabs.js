@@ -12,6 +12,7 @@ import ServiceProviderScreen from "./../screens/client/services/ServiceProviderS
 import PopularServiceScreen from "../screens/client/services/PopularServiceScreen";
 import ElectricianProviderScreen from "../screens/client/services/ElectricianProviderScreen";
 import ProviderDetailsScreen from "../screens/client/services/ProviderDetailsScreen";
+import PostJobScreen from "../screens/jobs/posts/PostJobScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -98,7 +99,7 @@ export default function BottomTabs() {
       })}
     >
       <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Jobs" component={ForgetPasswordScreen} />
+      <Tab.Screen name="Jobs" component={PostJobScreen} />
       <Tab.Screen name="My Jobs" component={OnboardingHomeScreen} />
       <Tab.Screen name="Profile" component={ServiceProviderScreen} />
       <Tab.Screen name="Chat" component={ServiceProviderScreen} />

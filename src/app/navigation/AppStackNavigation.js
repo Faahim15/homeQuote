@@ -15,6 +15,7 @@ import BookProviderScreen from "../screens/client/services/booked/BookProviderSc
 import PlaceSearchModal from "../components/shared/PlaceSearchModal";
 import BookingCalendar from "./../components/shared/BookingCalender";
 import BookingDetailsScreen from "../screens/client/services/booked/BookingDetailsScreen";
+import JobFormScreen from "../screens/jobs/posts/JobFormScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -48,15 +49,15 @@ export default function AppStackNavigation() {
 
       {/* Home Screens */}
 
-      {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> 
-      <Stack.Screen name="PopularSeviceScreen" component={PopularServiceScreen} /> 
-      <Stack.Screen name="ServiceProviderScreen" component={ServiceProviderScreen} />  */}
       <Stack.Screen
         name="ViewAllGalleryScreen"
         component={ViewAllGalleryScreen}
       />
+      {/* Posting a Jobs screens */}
 
-      {/* book service ProviderScreen */}
+      <Stack.Screen name="JobFormScreen" component={JobFormScreen} />
+
+      {/* booking service ProviderScreen */}
 
       <Stack.Screen name="BookProviderScreen" component={BookProviderScreen} />
       <Stack.Screen name="BookingCalender" component={BookingCalendar} />
