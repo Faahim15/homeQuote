@@ -18,7 +18,7 @@ const PlaceSearchModal = ({ route }) => {
         }}
         fetchDetails={true}
         query={{
-          key: "AIzaSyAszXC1be8aJ37eHuNcBm_-O1clWkPUwV4", // replace with your key
+          key: "API_KEY", // replace with your key
           language: "en",
         }}
       />
