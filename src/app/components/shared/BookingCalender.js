@@ -52,9 +52,9 @@ const BookingCalendar = () => {
 
   // Calendar theme
   const calendarTheme = {
-    selectedDayBackgroundColor: "#3b82f6",
+    selectedDayBackgroundColor: "#319FCA",
     selectedDayTextColor: "#ffffff",
-    todayTextColor: "#3b82f6",
+    todayTextColor: "#319FCA",
     dayTextColor: "#111827",
     textDisabledColor: "#d1d5db",
     arrowColor: "#6b7280",
