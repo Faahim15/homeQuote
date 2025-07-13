@@ -44,7 +44,7 @@ const BookingCalendar = () => {
       return;
     }
 
-    navigation.navigate("BookingDetailsScreen");
+    navigation.navigate("BookProviderScreen");
   };
 
   // Get today's date for minDate
@@ -101,8 +101,8 @@ const BookingCalendar = () => {
             hideExtraDays={true}
             firstDay={0}
             style={{
-              borderRadius: 8,
-              paddingBottom: 10,
+              borderRadius: scale(8),
+              paddingBottom: verticalScale(10),
             }}
           />
         </View>
@@ -119,7 +119,7 @@ const BookingCalendar = () => {
 
       {/* Time Selection - Only show if date is selected */}
       {selectedDate && (
-        <View className="mb-[9%] ">
+        <View className="mb-[9%] px-[0.5%] ">
           <Text className="font-poppins-semiBold text-base text-[#565656]">
             Select Time
           </Text>

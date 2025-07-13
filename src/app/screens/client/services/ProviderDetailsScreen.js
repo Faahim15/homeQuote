@@ -78,7 +78,9 @@ export default function ProviderDetailsScreen() {
         </View>
 
         {/* Book button */}
-        <CustomButton title="Book" />
+        <View className="px-[6%]">
+          <CustomButton route="BookProviderScreen" title="Book" />
+        </View>
 
         {/* Time Solt */}
 
