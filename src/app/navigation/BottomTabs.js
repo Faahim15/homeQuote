@@ -1,6 +1,4 @@
 import { View, Text } from "react-native";
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
@@ -43,14 +41,35 @@ export default function BottomTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
+          if (route.name === "Jobs") {
+            return (
+              <View style={{ width: size, height: size }}>
+                <Ionicons
+                  name="document-text-outline"
+                  size={size}
+                  color={color}
+                />
+                <Ionicons
+                  name="add-circle"
+                  size={size * 0.4}
+                  color={color}
+                  style={{
+                    position: "absolute",
+                    bottom: -2,
+                    right: -1,
+                    backgroundColor: "#fff",
+                  }}
+                />
+              </View>
+            );
+          }
+
           let iconName;
 
           if (route.name === "Home") {
             iconName = focused ? "grid" : "grid-outline";
-          } else if (route.name === "Jobs") {
-            iconName = focused ? "briefcase" : "briefcase-outline";
-          } else if (route.name === "Services") {
-            iconName = focused ? "list" : "list-outline";
+          } else if (route.name === "My Jobs") {
+            iconName = focused ? "reader-outline" : "reader-outline";
           } else if (route.name === "Chat") {
             iconName = focused ? "chatbubble" : "chatbubble-outline";
           } else if (route.name === "Profile") {
@@ -80,7 +99,7 @@ export default function BottomTabs() {
     >
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Jobs" component={ForgetPasswordScreen} />
-      <Tab.Screen name="Services" component={OnboardingHomeScreen} />
+      <Tab.Screen name="My Jobs" component={OnboardingHomeScreen} />
       <Tab.Screen name="Profile" component={ServiceProviderScreen} />
       <Tab.Screen name="Chat" component={ServiceProviderScreen} />
     </Tab.Navigator>
