@@ -20,7 +20,7 @@ export default function JobFormScreen() {
         data={[]} // dummy data, just to use FlatList as scroll container
         keyExtractor={(item, index) => index.toString()}
         renderItem={null}
-        contentContainerStyle={{ paddingBottom: verticalScale(50) }}
+        contentContainerStyle={{ paddingBottom: verticalScale(150) }}
         ListHeaderComponent={
           <View className="pb-[2%] border border-green-500 ">
             <View className="px-[6%]">
@@ -43,8 +43,10 @@ export default function JobFormScreen() {
               <PriceSlider />
               <RequestButton />
             </View>
-            <View className="mt-[4%]  px-[6%] ">
+            <View className="mt-[3%]  px-[6%] ">
               <InstructionField />
+            </View>
+            <View className="px-[6%]  ">
               <Specializations />
             </View>
           </View>
