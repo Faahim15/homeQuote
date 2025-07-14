@@ -68,10 +68,76 @@ export default function JobSummary() {
             keyExtractor={(item) => item.id}
             horizontal
             ItemSeparatorComponent={() => (
-              <View style={{ paddingRight: scale(20) }} />
+              <View style={{ paddingRight: scale(10) }} />
             )}
             showsHorizontalScrollIndicator={false}
           />
+        </View>
+
+        <View className="flex-col border-b border-[#CACACA] mb-[2%] w-full overflow-hidden">
+          <View className="flex-col gap-[6%] mt-[3%]">
+            <Text className="font-poppins-500medium text-xs text-[#5C5F62]">
+              Job Details
+            </Text>
+            <Text className="font-poppins-400regular text-justify text-xs text-[#5C5F62] ">
+              Need TV repair and wall-mount installation. TV and bracket already
+              available.
+            </Text>
+          </View>
+          {/* Service */}
+          <View className="flex-row mt-[3%] justify-between ">
+            <Text className="font-poppins-semiBold text-xs text-[#6B7280]">
+              Service
+            </Text>
+            <Text className="font-poppins-400regular text-justify overflow-hidden text-xs text-[#565656]">
+              Electrician
+            </Text>
+          </View>
+          {/* Specializations */}
+          <View className="flex-row mt-[3%] justify-between ">
+            <Text className="font-poppins-semiBold text-xs text-[#6B7280]">
+              Specializations
+            </Text>
+            <Text className="font-poppins-400regular text-justify overflow-hidden text-xs text-[#565656]">
+              Home Installation, Repair
+            </Text>
+          </View>
+          <View className="flex-row mt-[3%] w-[70%] gap-[25%] ">
+            <Text className="font-poppins-semiBold text-xs text-[#6B7280]">
+              Address
+            </Text>
+            <Text className="font-poppins-400regular text-justify overflow-hidden text-xs text-[#565656]">
+              Street no. 23 Ouch west road Alibagh, Alibagh, Ouch, 18750,
+              Pakistan
+            </Text>
+          </View>
+          {/* Booking Date */}
+          <View className="flex-row mt-[3%] justify-between ">
+            <Text className="font-poppins-semiBold text-xs text-[#6B7280]">
+              Booking date
+            </Text>
+            <Text className="font-poppins-400regular text-justify overflow-hidden text-xs text-[#565656]">
+              December 23, 2023
+            </Text>
+          </View>
+          {/* Booking hours */}
+          <View className="flex-row mt-[3%] justify-between ">
+            <Text className="font-poppins-semiBold text-xs text-[#6B7280]">
+              Booking Hours
+            </Text>
+            <Text className="font-poppins-400regular text-justify overflow-hidden text-xs text-[#565656]">
+              10:00 AM
+            </Text>
+          </View>
+        </View>
+
+        <View className="flex-row justify-between">
+          <Text className="font-poppins-semiBold text-sm text-[#565656] ">
+            Price
+          </Text>
+          <Text className="font-poppins-semiBold text-sm text-[#175994] ">
+            $100-150
+          </Text>
         </View>
       </View>
     </View>
