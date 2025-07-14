@@ -6,6 +6,8 @@ import LocationPicker from "../../../components/shared/LocationPicker";
 import TimePicker from "../../../components/shared/TimePicker";
 import ButtonGroup from "../../../components/shared/ButtonGroup";
 import PricingProgressBar from "../../../components/shared/PricingProgressBar";
+import AccuratePricingProgressBar from "../../../components/shared/PricingProgressBar";
+import PriceSlider from "../../../components/shared/PriceSlider";
 
 export default function JobFormScreen() {
   return (
@@ -32,7 +34,7 @@ export default function JobFormScreen() {
             <View className="px-[6%]">
               <ButtonGroup />
             </View>
-            {/* <PricingProgressBar /> */}
+            <PriceSlider />
           </View>
         }
       />
