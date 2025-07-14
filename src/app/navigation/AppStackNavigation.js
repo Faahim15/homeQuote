@@ -16,6 +16,8 @@ import PlaceSearchModal from "../components/shared/PlaceSearchModal";
 import BookingCalendar from "./../components/shared/BookingCalender";
 import BookingDetailsScreen from "../screens/client/services/booked/BookingDetailsScreen";
 import JobFormScreen from "../screens/jobs/posts/JobFormScreen";
+import LocationDetailsScreen from "../screens/jobs/posts/LocationDetailsScreen";
+import JobSummaryScreen from "../screens/jobs/posts/JobSummaryScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -56,8 +58,13 @@ export default function AppStackNavigation() {
       {/* Posting a Jobs screens */}
 
       <Stack.Screen name="JobFormScreen" component={JobFormScreen} />
+      <Stack.Screen
+        name="LocationDetailsScreen"
+        component={LocationDetailsScreen}
+      />
+      <Stack.Screen name="JobSummaryScreen" component={JobSummaryScreen} />
 
-      {/* booking service ProviderScreen */}
+      {/* booking service Provider Screen */}
 
       <Stack.Screen name="BookProviderScreen" component={BookProviderScreen} />
       <Stack.Screen name="BookingCalender" component={BookingCalendar} />

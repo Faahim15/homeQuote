@@ -73,17 +73,14 @@ export default function ServiceSearch() {
 
       {/* Search Input */}
       <View className="relative">
-        <View
-          style={XStyle.shadowBox}
-          className="flex-row items-center bg-[#f9f9f9] rounded-lg px-[4%] py-[3%] border border-[#D4E0EB]"
-        >
+        <View className="flex-row items-center bg-[#f9f9f9] rounded-lg px-[4%] py-[3%] border border-[#D4E0EB]">
           <Ionicons name="search" size={20} color="#6B7280" />
           <TextInput
             value={searchText}
             onChangeText={handleSearch}
             placeholder="Search for a service..."
             placeholderTextColor="#6B7280"
-            className="flex-1 ml-[3%] bg-white text-sm text-black"
+            className="flex-1 ml-[3%] bg-[#f9f9f9]text-sm text-black"
           />
           {searchText.length > 0 && (
             <TouchableOpacity
