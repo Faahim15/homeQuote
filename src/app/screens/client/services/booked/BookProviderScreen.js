@@ -4,6 +4,7 @@ import LocationPicker from "../../../../components/shared/LocationPicker";
 import { default as ClientCustomButton } from "../../../../components/client/CustomButton";
 import TimePicker from "../../../../components/shared/TimePicker";
 import ButtonGroup from "../../../../components/shared/ButtonGroup";
+import InstructionField from "../../../../components/shared/InstructionField";
 export default function BookProviderScreen() {
   return (
     <View className="flex-1 bg-[#F9F9F9]">
@@ -18,7 +19,7 @@ export default function BookProviderScreen() {
         {/* Button Selection */}
         <ButtonGroup />
 
-        <View className="mt-[6%]">
+        {/* <View className="mt-[6%]">
           <Text className="font-poppins-500medium text-base text-[#5C5F62]">
             Provide Specific Instructions or Details
           </Text>
@@ -30,7 +31,8 @@ export default function BookProviderScreen() {
             multiline
             textAlignVertical="top"
           />
-        </View>
+        </View> */}
+        <InstructionField />
 
         {/* continue button */}
         <View className="">

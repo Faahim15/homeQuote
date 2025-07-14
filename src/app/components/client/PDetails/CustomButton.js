@@ -9,7 +9,7 @@ export default function CustomButton({ title, selected, onPress }) {
         }`}
       >
         <Text
-          className={`font-poppins-400regular px-[3%] text-base ${
+          className={`font-poppins-400regular text-center px-[3%] text-base ${
             selected ? "text-black font-bold" : "text-[#80898A]"
           }`}
         >

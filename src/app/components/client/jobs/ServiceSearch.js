@@ -75,7 +75,7 @@ export default function ServiceSearch() {
       <View className="relative">
         <View
           style={XStyle.shadowBox}
-          className="flex-row items-center bg-white rounded-lg px-[4%] py-[3%] border border-[#D4E0EB]"
+          className="flex-row items-center bg-[#f9f9f9] rounded-lg px-[4%] py-[3%] border border-[#D4E0EB]"
         >
           <Ionicons name="search" size={20} color="#6B7280" />
           <TextInput
