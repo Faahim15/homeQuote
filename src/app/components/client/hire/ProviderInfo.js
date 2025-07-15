@@ -151,15 +151,6 @@ export default function ProviderInfo({ serviceData }) {
             </Text>
           </View>
         </View>
-
-        <View className="flex-row justify-between">
-          <Text className="font-poppins-semiBold text-sm text-[#565656] ">
-            Price
-          </Text>
-          <Text className="font-poppins-semiBold text-sm text-[#175994] ">
-            {price}
-          </Text>
-        </View>
       </View>
 
       <View>
@@ -167,21 +158,43 @@ export default function ProviderInfo({ serviceData }) {
           Service by
         </Text>
         <View>
-          <View>
+          <View className="flex-row gap-[4%] pb-[2%] border-b border-[#CACACA] ">
             <Image
               style={{
-                width: scale(80),
-                height: verticalScale(80),
-                borderRadius: scale(40),
+                width: scale(40),
+                height: verticalScale(40),
+                borderRadius: scale(20),
               }}
               source={{
                 uri: profileImage,
               }}
               className="mt-[2%]"
             />
-            <View>
-              <Text>Jackson</Text>
+            <View className="mt-[2%]">
+              <Text className="font-poppins-500medium text-xl text-[#1F2937]">
+                Jackson
+              </Text>
+
+              {/* Rating */}
+              <View className="flex-row items-center mb-[2%]">
+                <Text className="text-[#F59E0B] font-poppins-400regular text-xs mr-1">
+                  ★ {rating}
+                </Text>
+                <Text className="font-poppins-400regular text-[#18649F] text-xs">
+                  ({reviews} Reviews)
+                </Text>
+              </View>
             </View>
+          </View>
+          {/* Price and Time */}
+
+          <View className="flex-row pt-[1%] justify-between">
+            <Text className="font-poppins-400regular text-base text-[#1F2937]">
+              Price
+            </Text>
+            <Text className="text-[#175994] text-base font-poppins-semiBold">
+              {price}
+            </Text>
           </View>
         </View>
       </View>

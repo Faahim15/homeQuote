@@ -20,6 +20,7 @@ import LocationDetailsScreen from "../screens/jobs/posts/LocationDetailsScreen";
 import JobSummaryScreen from "../screens/jobs/posts/JobSummaryScreen";
 import SelectServiceScreen from "../screens/jobs/hire/SelectServiceScreen";
 import JobProviderInfoScreen from "../screens/jobs/hire/JobProviderInfoScreen";
+import ReviewFormScreen from "../screens/jobs/hire/ReviewFormScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -80,6 +81,8 @@ export default function AppStackNavigation() {
         name="JobProviderInfoScreen"
         component={JobProviderInfoScreen}
       />
+      <Stack.Screen name="ReviewFormScreen" component={ReviewFormScreen} />
+
       {/* Location Picker */}
       <Stack.Screen
         name="PlaceSearchModal"
