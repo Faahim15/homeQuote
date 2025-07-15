@@ -18,6 +18,7 @@ import BookingDetailsScreen from "../screens/client/services/booked/BookingDetai
 import JobFormScreen from "../screens/jobs/posts/JobFormScreen";
 import LocationDetailsScreen from "../screens/jobs/posts/LocationDetailsScreen";
 import JobSummaryScreen from "../screens/jobs/posts/JobSummaryScreen";
+import SelectServiceScreen from "../screens/jobs/hire/SelectServiceScreen";
 
 export default function AppStackNavigation() {
   const Stack = createNativeStackNavigator();
@@ -72,6 +73,8 @@ export default function AppStackNavigation() {
         name="BookingDetailsScreen"
         component={BookingDetailsScreen}
       />
+
+      {/* Hire a service provider flow screens */}
 
       {/* Location Picker */}
       <Stack.Screen

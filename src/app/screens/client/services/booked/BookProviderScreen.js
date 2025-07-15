@@ -19,19 +19,6 @@ export default function BookProviderScreen() {
         {/* Button Selection */}
         <ButtonGroup />
 
-        {/* <View className="mt-[6%]">
-          <Text className="font-poppins-500medium text-base text-[#5C5F62]">
-            Provide Specific Instructions or Details
-          </Text>
-
-          <TextInput
-            className="text-black bg-white border h-[40%] rounded-md border-[#CACACA] py-[2%] px-[2%] mt-[2%] "
-            placeholder="Write here.."
-            placeholderTextColor="#898989"
-            multiline
-            textAlignVertical="top"
-          />
-        </View> */}
         <InstructionField />
 
         {/* continue button */}

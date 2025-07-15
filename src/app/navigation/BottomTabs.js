@@ -4,8 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 // Import your screen components
-import ForgetPasswordScreen from "../screens/auth/ForgetPasswordScreen";
-import OnboardingHomeScreen from "../screens/onboarding/OnboardingHomeScreen";
+
 import HomeScreen from "../screens/client/home/HomeScreen";
 import { scale, verticalScale } from "../components/adaptive/Adaptiveness";
 import ServiceProviderScreen from "./../screens/client/services/ServiceProviderScreen";
@@ -13,6 +12,7 @@ import PopularServiceScreen from "../screens/client/services/PopularServiceScree
 import ElectricianProviderScreen from "../screens/client/services/ElectricianProviderScreen";
 import ProviderDetailsScreen from "../screens/client/services/ProviderDetailsScreen";
 import PostJobScreen from "../screens/jobs/posts/PostJobScreen";
+import SelectServiceScreen from "./../screens/jobs/hire/SelectServiceScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -100,7 +100,7 @@ export default function BottomTabs() {
     >
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Jobs" component={PostJobScreen} />
-      <Tab.Screen name="My Jobs" component={OnboardingHomeScreen} />
+      <Tab.Screen name="My Jobs" component={SelectServiceScreen} />
       <Tab.Screen name="Profile" component={ServiceProviderScreen} />
       <Tab.Screen name="Chat" component={ServiceProviderScreen} />
     </Tab.Navigator>
