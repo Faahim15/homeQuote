@@ -23,8 +23,8 @@ import StarRating from "../../../components/client/PDetails/StarRating";
 import Reviews from "../../../components/client/PDetails/Reviews";
 import Banner from "../../../components/client/PDetails/Banner";
 import PerfomanceMetrics from "../../../components/client/PDetails/PerfomanceMetrics";
-
 export default function ProviderDetailsScreen() {
+  const ratings = [3.5, 5, 2];
   const navigation = useNavigation();
   return (
     <View className="flex-1 bg-white">
@@ -128,17 +128,30 @@ export default function ProviderDetailsScreen() {
 
         {/* Reviews */}
         <View className="mx-[6%] mt-[3%] ">
-          <View>
+          <View className="flex-row justify-between ">
+            <View className="flex-row">
+              <Ionicons name="star" size={18} color="#F59E0B" />
+              <Text className="font-poppins-semiBold text-base text-[#565656]">
+                {" "}
+                4.97
+              </Text>
+            </View>
             <Text className="font-poppins-semiBold text-base text-[#565656]">
-              Review
+              22 Reviews
             </Text>
           </View>
-          <View className="">
-            <Reviews rating={3.5} />
-            <Reviews rating={5} />
-            <Reviews rating={2} />
+          <View className="mt-[2%] mb-[2%]">
+            <FlatList
+              data={ratings}
+              horizontal
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({ item }) => <Reviews rating={item} />}
+              contentContainerStyle={{ paddingRight: scale(16) }} // gap between items
+              showsHorizontalScrollIndicator={false}
+            />
           </View>
         </View>
+        {/* <View> </View> */}
       </ScrollView>
     </View>
   );
